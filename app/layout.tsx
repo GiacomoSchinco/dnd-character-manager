@@ -23,10 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cupcake">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased` } 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-200` } 
       >
         <Topbar/>
-        {children}
+        <div className="px-4 bg-base-200">{children}</div>
       </body>
     </html>
   );
