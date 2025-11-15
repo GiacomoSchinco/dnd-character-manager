@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { appMetadata } from "@/lib/metadata";
+import Login from "./login";
 const navLinks = [
     { href: "/characters", label: "Personaggi" },
     { href: "/campaigns", label: "Campagna" },
@@ -27,9 +28,7 @@ export default function Topbar() {
                             </Link>
                         </li>
                     ))}
-                    <Link href={"/login"} className="btn btn-ghost rounded-btn">
-                        Login
-                    </Link>
+                    <Login />
                 </ul>
 
                 {/* Bottone menu mobile */}
@@ -65,9 +64,7 @@ export default function Topbar() {
                                     </Link>
                                 </li>
                             ))}
-                            <Link href={"/login"} className="btn btn-ghost rounded-btn">
-                                Login
-                            </Link>
+                            <Login />
                         </ul>
                     </div>
                 )}
