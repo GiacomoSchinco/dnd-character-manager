@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 type Character = {
+    id:number;
     image: string;
     name: string;
     level: number;
@@ -66,9 +69,9 @@ export default function CardCharacter({ character }: Props) {
 
                 {/* Bottone */}
                 <div className="card-actions justify-end mt-4">
-                    <button className="btn btn-primary btn-sm">
+                    <Link href={`characters/${character.id}`}><button className="btn btn-primary btn-sm">
                         Dettagli
-                    </button>
+                    </button></Link>
                 </div>
             </div>
         </div>
