@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/ui/topbar";
 import { appMetadata } from "@/lib/metadata";
+import Wrapper from "@/components/layout/Wrapper";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cupcake">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-200` } 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300` } 
       >
         <Topbar/>
-        <div className="px-4 bg-base-200">{children}</div>
+        <Wrapper>
+        <div className="px-4 bg-base-200">{children}</div></Wrapper>
       </body>
     </html>
   );

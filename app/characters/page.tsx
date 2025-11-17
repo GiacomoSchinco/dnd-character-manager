@@ -1,12 +1,12 @@
 import CardCharacters from '@/components/ui/card-character'
-import React from 'react'
 import { party } from '@/lib/party';
-export default function characters() {
+
+export default function Characters() {
     return (
-        <div className="flex flex-wrap gap-4 p-4">
-            {party.map((c) => {
-                return <CardCharacters key={c.id} character={c}/>
-            })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+            {party.map((c) => (
+                <CardCharacters key={c.id} character={c} />
+            ))}
         </div>
-    )
+    );
 }

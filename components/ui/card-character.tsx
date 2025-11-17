@@ -19,7 +19,7 @@ type Props = {
 
 export default function CardCharacter({ character }: Props) {
     return (
-        <div  className="card w-64 bg-amber-50  flex-1 shadow-xl border border-primary/30 hover:shadow-2xl transition-all duration-300">
+<div className="card w-full max-w-xs bg-amber-50 shadow-xl border border-primary/30 hover:shadow-2xl transition-all duration-300">
             
             {/* Immagine */}
             <figure className="relative">
