@@ -32,7 +32,7 @@ export const party = [
     background: "Intrattenitrice",
     alignment: "Neutrale",
     image: "https://placehold.co/400x400/orange/white",
-    hp: 33,
+    hp: 2,
     maxhp:50
   },
   {
@@ -44,7 +44,7 @@ export const party = [
     background: "Saggio",
     alignment: "Legale Neutrale",
      image: "https://placehold.co/400x400/orange/white",
-    hp: 28,
+    hp: 23,
     maxhp:50
   },
   {

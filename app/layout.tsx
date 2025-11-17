@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Topbar from "@/components/ui/topbar";
+import Topbar from "@/components/ui/Topbar";
 import { appMetadata } from "@/lib/metadata";
 import Wrapper from "@/components/layout/Wrapper";
 const geistSans = Geist({
@@ -24,11 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cupcake">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300` } 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300`}
       >
-        <Topbar/>
+        <Topbar />
         <Wrapper>
-        <div className="px-4 bg-base-200">{children}</div></Wrapper>
+          <div className="px-4 bg-base-200">{children}</div>
+        </Wrapper>
       </body>
     </html>
   );

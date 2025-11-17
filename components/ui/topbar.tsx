@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { appMetadata } from "@/lib/metadata";
-import Login from "./login";
+import Login from "./Login";
 const navLinks = [
     { href: "/characters", label: "Personaggi" },
     { href: "/campaigns", label: "Campagna" },

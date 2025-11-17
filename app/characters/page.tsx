@@ -1,4 +1,4 @@
-import CardCharacters from '@/components/ui/card-character'
+import CardCharacters from '@/components/ui/CardCharacter'
 import { party } from '@/lib/party';
 
 export default function Characters() {

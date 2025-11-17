@@ -1,14 +1,14 @@
 import Link from "next/link";
-
+import HpBar from "./HpBar";
 type Character = {
-    id:number;
+    id: number;
     image: string;
     name: string;
     level: number;
     race: string;
     class: string;
     hp: number;
-    maxhp:number;
+    maxhp: number;
     background: string;
     alignment: string;
 };
@@ -19,8 +19,8 @@ type Props = {
 
 export default function CardCharacter({ character }: Props) {
     return (
-<div className="card w-full max-w-xs bg-amber-50 shadow-xl border border-primary/30 hover:shadow-2xl transition-all duration-300">
-            
+        <div className="card w-full max-w-xs bg-amber-50 shadow-xl border border-primary/30 hover:shadow-2xl transition-all duration-300">
+
             {/* Immagine */}
             <figure className="relative">
                 <img
@@ -47,15 +47,7 @@ export default function CardCharacter({ character }: Props) {
                 <div className="divider my-2"></div>
 
                 {/* HP */}
-                <div className="flex items-center gap-2">
-                    <span className="font-bold">HP:</span>
-                    <progress
-                        className="progress progress-error w-full"
-                        value={character.hp}
-                        max={character.maxhp}
-                    />
-                    <span className="text-sm">{character.hp}</span>
-                </div>
+                <HpBar current={character.hp} max={character.maxhp} />
 
                 <div className="divider my-2"></div>
 
