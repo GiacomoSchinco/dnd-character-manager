@@ -1,7 +1,8 @@
+import { t } from "@/lib/dictionary";
 const BG_COLOR = "bg-amber-200"; // Colore unico per tutte le stats
 
 type StatDiamondProps = {
-  label: string;
+  label: keyof typeof import("@/lib/dictionaries/stats").stats;
   value: number;
   modifier: number;
 };
@@ -14,14 +15,14 @@ export default function StatDiamond({ label, value, modifier }: StatDiamondProps
       <div className="relative flex flex-col items-center">
         
         {/* Quadrato modificatore (sopra) */}
-        <div className="absolute top-18 w-10 h-6 bg-white border border-gray-400 rounded-md flex items-center justify-center shadow-sm z-10">
+        <div className="absolute top-20 w-10 h-6 bg-white border border-gray-400 rounded-md flex items-center justify-center shadow-sm z-10">
           <span className="text-gray-800 font-bold text-lg">
             {modifier >= 0 ? `+${modifier}` : modifier}
           </span>
         </div>
 
         {/* Rombo stat */}
-        <div className="relative w-16 h-16 mt-4">
+        <div className="relative w-18 h-18 mt-4">
           <div
             className={`absolute inset-0 ${BG_COLOR}
             border border-gray-400 
@@ -29,7 +30,7 @@ export default function StatDiamond({ label, value, modifier }: StatDiamondProps
             rotate-45 
             flex items-center justify-center shadow-sm`}
           >
-            <span className="text-gray-800 font-bold text-2xl rotate-[-45deg]">
+            <span className="text-gray-800 font-bold text-3xl rotate-[-45deg]">
               {value}
             </span>
           </div>
@@ -37,8 +38,8 @@ export default function StatDiamond({ label, value, modifier }: StatDiamondProps
       </div>
 
       {/* Label */}
-      <span className="font-semibold text-sm text-gray-700 tracking-wide mt-2">
-        {label}
+      <span className="font-semibold text-base text-gray-700 tracking-wide mt-2">
+         {t("stats", label)}
       </span>
     </div>
   );
