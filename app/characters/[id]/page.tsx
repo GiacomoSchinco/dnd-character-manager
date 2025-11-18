@@ -2,7 +2,6 @@ import StatDiamond from "@/components/ui/StatDiamond";
 import SkillsDisplay from "@/components/ui/SkillsDisplay";
 import { skills, SkillKey } from "@/lib/dictionaries/skills";
 import HpBar from "@/components/ui/HpBar";
-import CardCharacters from "@/components/ui/CardCharacter";
 import { party } from "@/lib/party";
 
 export default async function Character({ params }: { params: Promise<{ id: string }> }) {
@@ -27,7 +26,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
     <>
       <div className="max-w-full">
         {/* Immagine  e nome del Personaggio*/}
-        <div className="card lg:card-side bg-base-100 shadow-sm mb-4">
+        <div className="card lg:card-side bg-amber-50 shadow-sm mb-4">
           <figure className="w-48 mx-auto lg:mx-0 overflow-hidden"> {/* centro su mobile */}
             <img
               src="https://placehold.co/400x400/orange/white"
@@ -44,7 +43,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             <p className="text-sm text-accent-content">
               {character.race} • {character.class}
             </p>
-            <HpBar current={26} max={50} size="large" />
+            <HpBar current={character.hp} max={character.maxhp} size="large" />
             {/* Background + Allineamento */}
             <p className="text-xs opacity-70">
               <strong>Background:</strong> {character.background}

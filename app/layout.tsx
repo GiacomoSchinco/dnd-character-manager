@@ -22,13 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="cupcake">
+    <html lang="en" data-theme="cupcake_fantasy">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300`}
       >
         <Topbar />
         <Wrapper>
-          <div className="px-4 bg-base-200">{children}</div>
+          <div>{children}</div>
         </Wrapper>
       </body>
     </html>
