@@ -7,7 +7,7 @@ export const party = [
     level: 5,
     background: "Esploratore",
     alignment: "Neutrale Buono",
-    image: "https://placehold.co/400x400/orange/white",
+    image: "https://placehold.co/400x400/dark/white",
     hp: 42,
     maxhp:50
   },
@@ -19,7 +19,7 @@ export const party = [
     level: 6,
     background: "Soldato",
     alignment: "Caotico Buono",
-   image: "https://placehold.co/400x400/orange/white",
+   image: "https://placehold.co/400x400/blue/white",
     hp: 58,
     maxhp:60
   },
@@ -31,7 +31,7 @@ export const party = [
     level: 5,
     background: "Intrattenitrice",
     alignment: "Neutrale",
-    image: "https://placehold.co/400x400/orange/white",
+    image: "https://placehold.co/400x400/red/white",
     hp: 2,
     maxhp:50
   },
@@ -43,7 +43,7 @@ export const party = [
     level: 6,
     background: "Saggio",
     alignment: "Legale Neutrale",
-     image: "https://placehold.co/400x400/orange/white",
+     image: "https://placehold.co/400x400/green/white",
     hp: 23,
     maxhp:50
   },
@@ -55,7 +55,7 @@ export const party = [
     level: 5,
     background: "Accolito",
     alignment: "Neutrale Buono",
-     image: "https://placehold.co/400x400/orange/white",
+     image: "https://placehold.co/400x400/lime/white",
     hp: 47,
     maxhp:50
   },
