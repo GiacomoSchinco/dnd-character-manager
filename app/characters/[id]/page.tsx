@@ -50,7 +50,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             />
           </figure>
           <div className="card-body">
-            {/* Nome */}
+            {/* Nome e Livello*/}
             <h2 className="card-title text-primary">
               {character.name} - Livello {character.level}
             </h2>
@@ -68,10 +68,12 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             </p>
             <div className="divider"/>
             {/* Statistiche di Combattimento */}
-            <div className="flex flex-col lg:flex-row gap-4">
+            <div className="flex flex-row gap-4">
               <CombatStat label="CA" value={15} icon={<IconShield />} />
               <CombatStat label="Iniziativa" value={15} />
               <CombatStat label="Velocità" value={15} />
+              <CombatStat label="Ispirazione" value={15} />
+              <CombatStat label="Competenza" value={15} />
             </div>
 
           </div>
