@@ -7,3 +7,4 @@ export { default as StatDiamond } from "./StatDiamond";
 export { default as Topbar } from "./Topbar";
 export { default as SavingThrow } from "./SavingThrow";
 export { IconShield } from "./Icon";
+export { default as Loading } from "./Loading";
