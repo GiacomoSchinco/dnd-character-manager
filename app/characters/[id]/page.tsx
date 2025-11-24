@@ -26,6 +26,14 @@ export default async function Character({ params }: { params: Promise<{ id: stri
     { label: "WIS", value: 13, modifier: 1 },
     { label: "CHA", value: 8, modifier: -1 },
   ] as const;
+  // Calcoli base per le combat stat dalla "simulazione di chiamata"
+  const getMod = (abbr: "STR" | "DEX" | "CON" | "INT" | "WIS" | "CHA") =>
+    characterStats.find((s) => s.label === abbr)?.modifier ?? 0;
+  const proficiencyBonus = 2 + Math.floor((character.level - 1) / 4);
+  const initiative = getMod("DEX");
+  const ac = 10 + getMod("DEX"); // base senza armatura
+  const speed = 30; // valore di default in piedi
+  const inspiration = false; // placeholder finché non modelliamo il dato
   const skillValues: Record<SkillKey, number> = Object.fromEntries(
     Object.keys(skills).map((s) => [s, Math.floor(Math.random() * 6) - 1])
   ) as Record<SkillKey, number>;
@@ -69,11 +77,11 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             <div className="divider"/>
             {/* Statistiche di Combattimento */}
             <div className="flex flex-row gap-4">
-              <CombatStat label="CA" value={15} icon={<IconShield />} />
-              <CombatStat label="Iniziativa" value={15} />
-              <CombatStat label="Velocità" value={15} />
-              <CombatStat label="Ispirazione" value={15} />
-              <CombatStat label="Competenza" value={15} />
+              <CombatStat label="CA" value={ac} icon={<IconShield />} />
+              <CombatStat label="Iniziativa" value={initiative} />
+              <CombatStat label="Velocità" value={speed} />
+              <CombatStat label="Ispirazione" value={inspiration ? "✓" : "-"} />
+              <CombatStat label="Competenza" value={proficiencyBonus} />
             </div>
 
           </div>
