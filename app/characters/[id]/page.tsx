@@ -3,11 +3,10 @@ import SkillsDisplay from "@/components/ui/SkillsDisplay";
 import { skills, SkillKey } from "@/lib/dictionaries/skills";
 import HpBar from "@/components/ui/HpBar";
 import { party } from "@/lib/party";
-import { SavingThrow } from "@/components/ui";
+import { SavingThrow, DataTable } from "@/components/ui";
 import { CombatStat } from "@/components/ui";
 import { IconShield } from "@/components/ui";
 import { notFound } from "next/navigation";
-import CrudTable from "@/components/ui/CrudTable";
 import { currencyLabels, currencyOrder } from "@/lib/dictionaries/currency";
 
 
@@ -158,7 +157,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
       <div className="card card-border bg-amber-50 mb-4">
         <div className="card-body">
           <h3 className="card-title text-lg mb-2">Attacchi</h3>
-          <CrudTable
+          <DataTable
             initialData={attacks}
             visibleColumns={["nome", "bonus", "danno", "tipo", "proprieta"]}
             labels={{ nome: "Nome", bonus: "+Colpire", danno: "Danno", tipo: "Tipo", proprieta: "Proprietà" }}
@@ -171,7 +170,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Proficienze</h3>
-            <CrudTable
+            <DataTable
               initialData={proficiencies}
               visibleColumns={["categoria", "elemento"]}
               labels={{ categoria: "Categoria", elemento: "Elemento" }}
@@ -181,7 +180,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Linguaggi</h3>
-            <CrudTable
+            <DataTable
               initialData={languages}
               visibleColumns={["lingua"]}
               labels={{ lingua: "Lingua" }}
@@ -195,7 +194,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Equipaggiamento</h3>
-            <CrudTable
+            <DataTable
               initialData={equipment}
               visibleColumns={["nome", "quantita", "peso"]}
               labels={{ nome: "Oggetto", quantita: "Qtà", peso: "Peso" }}
@@ -205,7 +204,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Valuta</h3>
-            <CrudTable
+            <DataTable
               initialData={currency}
               visibleColumns={currencyOrder}
               labels={{ cp: currencyLabels.cp, sp: currencyLabels.sp, gp: currencyLabels.gp, pp: currencyLabels.pp }}
@@ -219,7 +218,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Slot Incantesimo</h3>
-            <CrudTable
+            <DataTable
               initialData={spellSlots}
               visibleColumns={["livello", "slotTotali", "slotUsati"]}
               labels={{ livello: "Livello", slotTotali: "Totali", slotUsati: "Usati" }}
@@ -229,7 +228,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         <div className="card card-border bg-amber-50">
           <div className="card-body">
             <h3 className="card-title text-lg mb-2">Incantesimi</h3>
-            <CrudTable
+            <DataTable
               initialData={spells}
               visibleColumns={["livello", "incantesimo", "preparato"]}
               labels={{ livello: "Livello", incantesimo: "Nome", preparato: "Preparato" }}

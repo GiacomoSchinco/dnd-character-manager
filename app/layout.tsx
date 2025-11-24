@@ -4,6 +4,8 @@ import "./globals.css";
 import Topbar from "@/components/ui/Topbar";
 import { appMetadata } from "@/lib/metadata";
 import Wrapper from "@/components/layout/Wrapper";
+import App from "next/app";
+import { AppProviders } from "@/components/layout/query-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,10 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300`}
       >
+        <AppProviders>
         <Topbar />
         <Wrapper>
           <div>{children}</div>
         </Wrapper>
+        </AppProviders>
       </body>
     </html>
   );

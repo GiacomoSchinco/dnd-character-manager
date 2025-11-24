@@ -55,7 +55,7 @@ import { on } from "events";
 
 type AnyRecord = Record<string, any>;
 
-export type CrudTableProps<T extends AnyRecord> = {
+export type DataTableProps<T extends AnyRecord> = {
     initialData: T[];
     idKey?: keyof T & string; // chiave primaria (default: "id")
     hiddenColumns?: Array<keyof T & string>;
@@ -65,6 +65,7 @@ export type CrudTableProps<T extends AnyRecord> = {
     onEdit?: (id: any, row: T) => void; // callback esterna per modifica
     onDelete?: (id: any, row: T) => void; // callback esterna per eliminazione
     onRowClick?: (id: any, row: T) => void; // click sulla riga
+    pagination?: boolean; // se true, attiva la paginazione client-side
 };
 
 function toLabel(key: string) {
@@ -74,7 +75,7 @@ function toLabel(key: string) {
         .replace(/^\w/, (c) => c.toUpperCase());
 }
 
-export default function CrudTable<T extends AnyRecord>(
+export default function DataTable<T extends AnyRecord>(
     {
         initialData,
         idKey = "id" as keyof T & string,
@@ -85,18 +86,29 @@ export default function CrudTable<T extends AnyRecord>(
         onEdit,
         onDelete,
         onRowClick,
-    }: CrudTableProps<T>
+        pagination = false,
+    }: DataTableProps<T>
 ) {
     const [data, setData] = useState<T[]>(initialData);
-    // sincronizza quando cambiano i dati esterni
     useEffect(() => {
         setData(initialData);
     }, [initialData]);
     const first = data[0] ?? initialData[0] ?? ({} as T);
     const keys = useMemo(() => Object.keys(first) as Array<keyof T & string>, [first]);
 
-    // Creazione e modifica interne disabilitate
-
+    // PAGINAZIONE CLIENT (solo se pagination === true)
+    const [page, setPage] = useState(1);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const totalRows = data.length;
+    const totalPages = Math.max(1, Math.ceil(totalRows / rowsPerPage));
+    const paginatedData = useMemo(() => {
+        if (!pagination) return data;
+        const start = (page - 1) * rowsPerPage;
+        return data.slice(start, start + rowsPerPage);
+    }, [data, page, rowsPerPage, pagination]);
+    useEffect(() => {
+        if (pagination && page > totalPages) setPage(totalPages);
+    }, [totalPages, page, pagination]);
     const visibleKeys = useMemo(() => {
         const idStr = idKey as string;
         if (visibleColumns && visibleColumns.length) {
@@ -154,17 +166,13 @@ export default function CrudTable<T extends AnyRecord>(
     );
 
     const table = useReactTable<T>({
-        data,
+        data: paginatedData,
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
 
-    // rimosse funzioni interne di edit/delete/create: demandate via callback
-
     return (
         <div className="p-6">
-            <div className="flex items-center justify-between mb-4" />
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -205,6 +213,43 @@ export default function CrudTable<T extends AnyRecord>(
                     </tbody>
                 </table>
             </div>
+            {pagination && (
+                <div className="flex flex-col items-center mt-6">
+                    <div className="flex gap-4 items-center justify-center">
+                        <button
+                            className="btn btn-sm"
+                            disabled={page === 1}
+                            onClick={() => setPage((p) => Math.max(1, p - 1))}
+                        >
+                            &lt; Prev
+                        </button>
+                        <span className="mx-2">
+                            Pagina {page} di {totalPages}
+                        </span>
+                        <button
+                            className="btn btn-sm"
+                            disabled={page === totalPages}
+                            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                        >
+                            Next &gt;
+                        </button>
+                    </div>
+                    <div className="flex gap-2 items-center mt-2">
+                        <label htmlFor="rowsPerPage" className="text-sm">Righe:</label>
+                        <select
+                            id="rowsPerPage"
+                            className="select select-sm"
+                            value={rowsPerPage}
+                            onChange={e => { setRowsPerPage(Number(e.target.value)); setPage(1); }}
+                        >
+                            {[5, 10, 20, 50].map(n => (
+                                <option key={n} value={n}>{n}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
+

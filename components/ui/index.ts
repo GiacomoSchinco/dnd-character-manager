@@ -8,3 +8,4 @@ export { default as Topbar } from "./Topbar";
 export { default as SavingThrow } from "./SavingThrow";
 export { IconShield } from "./Icon";
 export { default as Loading } from "./Loading";
+export { default as DataTable } from "./DataTable";
