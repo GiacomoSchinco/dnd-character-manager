@@ -7,6 +7,8 @@ import { SavingThrow } from "@/components/ui";
 import { CombatStat } from "@/components/ui";
 import { IconShield } from "@/components/ui";
 import { notFound } from "next/navigation";
+import CrudTable from "@/components/ui/CrudTable";
+import { currencyLabels, currencyOrder } from "@/lib/dictionaries/currency";
 
 
 export default async function Character({ params }: { params: Promise<{ id: string }> }) {
@@ -45,6 +47,37 @@ export default async function Character({ params }: { params: Promise<{ id: stri
     WIS: 1,
     CHA: -1,
   };
+
+  // Dati tabellari di esempio (senza backend) — simulazione di chiamata
+  const attacks = [
+    { id: 1, nome: "Spada Corta", bonus: getMod("DEX") + proficiencyBonus, danno: `1d6+${getMod("DEX")}`, tipo: "Tagliente", proprieta: "Leggera" },
+    { id: 2, nome: "Arco Corto", bonus: getMod("DEX") + proficiencyBonus, danno: `1d6+${getMod("DEX")}`, tipo: "Perforante", proprieta: "A distanza" },
+  ];
+  const proficiencies = [
+    { id: 1, categoria: "Armi", elemento: "Armi semplici" },
+    { id: 2, categoria: "Armi", elemento: "Armi marziali" },
+    { id: 3, categoria: "Armature", elemento: "Armature leggere" },
+    { id: 4, categoria: "Strumenti", elemento: "Kit da esploratore" },
+  ];
+  const languages = [
+    { id: 1, lingua: "Comune" },
+    { id: 2, lingua: "Elfico" },
+  ];
+  const equipment = [
+    { id: 1, nome: "Torcia", quantita: 3, peso: 1 },
+    { id: 2, nome: "Razioni (1gg)", quantita: 5, peso: 2 },
+    { id: 3, nome: "Corda (15m)", quantita: 1, peso: 5 },
+  ];
+  const currency = [{ id: 1, cp: 0, sp: 7, gp: 25, pp: 0 }];
+  const spellSlots = [
+    { id: 1, livello: 1, slotTotali: 4, slotUsati: 1 },
+    { id: 2, livello: 2, slotTotali: 2, slotUsati: 0 },
+  ];
+  const spells = [
+    { id: 1, livello: 1, incantesimo: "Cura Ferite", preparato: true },
+    { id: 2, livello: 1, incantesimo: "Dardo Incantato", preparato: true },
+    { id: 3, livello: 2, incantesimo: "Invisibilità", preparato: false },
+  ];
   return (
     <>
       <div className="max-w-full">
@@ -118,6 +151,90 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Attacchi */}
+      <div className="card card-border bg-amber-50 mb-4">
+        <div className="card-body">
+          <h3 className="card-title text-lg mb-2">Attacchi</h3>
+          <CrudTable
+            initialData={attacks}
+            visibleColumns={["nome", "bonus", "danno", "tipo", "proprieta"]}
+            labels={{ nome: "Nome", bonus: "+Colpire", danno: "Danno", tipo: "Tipo", proprieta: "Proprietà" }}
+          />
+        </div>
+      </div>
+
+      {/* Proficienze e Linguaggi */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Proficienze</h3>
+            <CrudTable
+              initialData={proficiencies}
+              visibleColumns={["categoria", "elemento"]}
+              labels={{ categoria: "Categoria", elemento: "Elemento" }}
+            />
+          </div>
+        </div>
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Linguaggi</h3>
+            <CrudTable
+              initialData={languages}
+              visibleColumns={["lingua"]}
+              labels={{ lingua: "Lingua" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Equipaggiamento e Valuta */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Equipaggiamento</h3>
+            <CrudTable
+              initialData={equipment}
+              visibleColumns={["nome", "quantita", "peso"]}
+              labels={{ nome: "Oggetto", quantita: "Qtà", peso: "Peso" }}
+            />
+          </div>
+        </div>
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Valuta</h3>
+            <CrudTable
+              initialData={currency}
+              visibleColumns={currencyOrder}
+              labels={{ cp: currencyLabels.cp, sp: currencyLabels.sp, gp: currencyLabels.gp, pp: currencyLabels.pp }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Spellcasting */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Slot Incantesimo</h3>
+            <CrudTable
+              initialData={spellSlots}
+              visibleColumns={["livello", "slotTotali", "slotUsati"]}
+              labels={{ livello: "Livello", slotTotali: "Totali", slotUsati: "Usati" }}
+            />
+          </div>
+        </div>
+        <div className="card card-border bg-amber-50">
+          <div className="card-body">
+            <h3 className="card-title text-lg mb-2">Incantesimi</h3>
+            <CrudTable
+              initialData={spells}
+              visibleColumns={["livello", "incantesimo", "preparato"]}
+              labels={{ livello: "Livello", incantesimo: "Nome", preparato: "Preparato" }}
+            />
+          </div>
         </div>
       </div>
 
