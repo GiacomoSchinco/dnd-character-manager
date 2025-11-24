@@ -14,7 +14,7 @@
  *
  * Props principali:
  * - initialData: T[]                        | Dati da mostrare.
- * - idKey?: keyof T (default: "id")        | Chiave primaria usata per passare l'id nelle callback.
+ * - idKey?: keyof T (default: "id")         | Chiave primaria usata per passare l'id nelle callback.
  * - visibleColumns?: (keyof T)[]            | Se presente, mostra SOLO queste colonne (nell'ordine dato).
  * - hiddenColumns?: (keyof T)[]             | Colonne da nascondere (oltre a idKey).
  * - readOnlyColumns?: (keyof T)[]           | Marcatura informativa (non ci sono editor interni).
