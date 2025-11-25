@@ -4,6 +4,7 @@ import DataTable from '@/components/ui/DataTable';
 import { party } from '@/lib/party';
 import { useWeapons } from "@/lib/hooks/useWeapons";
 import { Loading } from '@/components/ui';
+import CardAddCharacter from '@/components/ui/CardAddCharacter';
 
 export default function Characters() {
     const { data, isLoading, isError, error } = useWeapons();
@@ -57,6 +58,7 @@ export default function Characters() {
                 {party.map((c) => (
                     <CardCharacters key={c.id} character={c} />
                 ))}
+                <CardAddCharacter onClick={() => console.log("Aggiungi nuovo personaggio")} />
             </div>
         </>
     );
