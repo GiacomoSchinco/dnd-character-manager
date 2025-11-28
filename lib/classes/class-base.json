@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "hit_points": {
+    "hit_die": "",
+    "at_1st_level": "",
+    "at_higher_levels": ""
+  },
+  "proficiencies": {
+    "armor": [],
+    "weapons": [],
+    "tools": [],
+    "saving_throws": [],
+    "skills": {
+      "choose": 0,
+      "from": []
+    }
+  },
+  "equipment": [],
+  "progression_table": {
+    "level": [],
+    "proficiency_bonus": [],
+    "features": []
+  },
+  "features": {
+    "ability_score_improvement": [],
+    "subclass_choice": {
+      "level": null,
+      "options": []
+    },
+    "other_features": {}
+  }
+}
