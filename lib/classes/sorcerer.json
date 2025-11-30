@@ -1,12 +1,8 @@
 {
         "Class Features": {
-            "content": "As a sorcerer, you gain the following class features.",
             "Hit Points": {
-                "content": [
-                    "**Hit Dice:** 1d6 per sorcerer level",
-                    "**Hit Points at 1st Level:** 6 + your Constitution modifier",
-                    "**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
-                ]
+                "hit_dice": 6,
+                "average_per_level": 4
             },
             "Proficiencies": {
                 "content": [

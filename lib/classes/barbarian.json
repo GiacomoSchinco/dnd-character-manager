@@ -1,12 +1,8 @@
 {
         "Class Features": {
-            "content": "As a barbarian, you gain the following class features.",
             "Hit Points": {
-                "content": [
-                    "**Hit Dice:** 1d12 per barbarian level",
-                    "**Hit Points at 1st Level:** 12 + your Constitution modifier",
-                    "**Hit Points at Higher Levels:** 1d12 (or 7) + your Constitution modifier per barbarian level after 1st"
-                ]
+                "hit_dice": 12,
+                "average_per_level": 7
             },
             "Proficiencies": {
                 "content": [

@@ -1,0 +1,15 @@
+{
+  "_comment": "Calcolo dei Punti Ferita: per ogni livello, scegli se tirare 1dN (hit_dice) o prendere il valore medio (average_per_level). Aggiungi il modificatore di Costituzione come da regole.",
+  "barbarian": { "hit_dice": 12, "average_per_level": 7 },
+  "bard": { "hit_dice": 8, "average_per_level": 5 },
+  "cleric": { "hit_dice": 8, "average_per_level": 5 },
+  "druid": { "hit_dice": 8, "average_per_level": 5 },
+  "fighter": { "hit_dice": 10, "average_per_level": 6 },
+  "monk": { "hit_dice": 8, "average_per_level": 5 },
+  "paladin": { "hit_dice": 10, "average_per_level": 6 },
+  "ranger": { "hit_dice": 10, "average_per_level": 6 },
+  "rogue": { "hit_dice": 8, "average_per_level": 5 },
+  "sorcerer": { "hit_dice": 6, "average_per_level": 4 },
+  "warlock": { "hit_dice": 8, "average_per_level": 5 },
+  "wizard": { "hit_dice": 6, "average_per_level": 4 }
+}

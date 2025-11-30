@@ -1,12 +1,8 @@
 {
         "Class Features": {
-            "content": "As a paladin, you gain the following class features.",
             "Hit Points": {
-                "content": [
-                    "**Hit Dice:** 1d10 per paladin level",
-                    "**Hit Points at 1st Level:** 10 + your Constitution modifier",
-                    "**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per paladin level after 1st"
-                ]
+                "hit_dice": 10,
+                "average_per_level": 6
             },
             "Proficiencies": {
                 "content": [
