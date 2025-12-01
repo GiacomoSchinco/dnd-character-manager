@@ -5,13 +5,12 @@
                 "average_per_level": 5
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** Light armor",
-                    "**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords",
-                    "**Tools:** Three musical instruments of your choice",
-                    "**Saving Throws:** Dexterity, Charisma",
-                    "**Skills:** Choose any three"
-                ]
+    "armor": ["light"],
+    "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
+    "tools": ["musical instrument"],
+    "savingThrows": ["dexterity", "charisma"],
+    "skills": ["any"],
+    "skillsChoose": 3
             },
             "Equipment": {
                 "content": [

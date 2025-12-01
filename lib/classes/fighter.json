@@ -5,14 +5,12 @@
                 "average_per_level": 6
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** All armor, shields",
-                    "**Weapons:** Simple weapons, martial weapons",
-                    "**Tools:** None",
-                    "**Saving Throws:** Strength, Constitution",
-                    "**Skills:** Choose two skills from Acrobatics, Animal",
-                    "Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"
-                ]
+    "armor": ["all", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "savingThrows": ["strength", "constitution"],
+    "skills": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "perception", "survival"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [

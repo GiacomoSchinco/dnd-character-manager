@@ -5,13 +5,12 @@
                 "average_per_level": 5
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** Light armor",
-                    "**Weapons:** Simple weapons",
-                    "**Tools:** None",
-                    "**Saving Throws:** Wisdom, Charisma",
-                    "**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"
-                ]
+    "armor": ["light"],
+    "weapons": ["simple"],
+    "tools": [],
+    "savingThrows": ["wisdom", "charisma"],
+    "skills": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [

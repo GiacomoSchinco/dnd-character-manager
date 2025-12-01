@@ -5,14 +5,12 @@
                 "average_per_level": 5
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)",
-                    "**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",
-                    "**Tools:** Herbalism kit",
-                    "**Saving Throws:** Intelligence, Wisdom",
-                    "**Skills:** Choose two from Arcana, Animal Handling,",
-                    "Insight, Medicine, Nature, Perception, Religion, and Survival"
-                ]
+    "armor": ["light", "medium", "shields (no metal)"],
+    "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"],
+    "tools": ["herbalism kit"],
+    "savingThrows": ["intelligence", "wisdom"],
+    "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [

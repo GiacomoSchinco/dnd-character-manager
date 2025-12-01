@@ -5,14 +5,12 @@
                 "average_per_level": 4
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** None",
-                    "**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows",
-                    "**Tools:** None",
-                    "**Saving Throws:** Constitution, Charisma",
-                    "**Skills:** Choose two from Arcana, Deception, Insight,",
-                    "Intimidation, Persuasion, and Religion"
-                ]
+    "armor": [],
+    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+    "tools": [],
+    "savingThrows": ["constitution", "charisma"],
+    "skills": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [

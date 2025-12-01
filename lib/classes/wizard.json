@@ -5,13 +5,12 @@
                 "average_per_level": 4
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** None",
-                    "**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows",
-                    "**Tools:** None",
-                    "**Saving Throws:** Intelligence, Wisdom",
-                    "**Skills:** Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion"
-                ]
+    "armor": [],
+    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+    "tools": [],
+    "savingThrows": ["intelligence", "wisdom"],
+    "skills": ["arcana", "history", "insight", "investigation", "medicine", "religion"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [

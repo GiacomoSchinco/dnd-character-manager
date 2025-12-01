@@ -1,0 +1,98 @@
+{
+  "barbarian": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "savingThrows": ["strength", "constitution"],
+    "skills": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"],
+    "skillsChoose": 2
+  },
+  "bard": {
+    "armor": ["light"],
+    "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
+    "tools": ["musical instrument"],
+    "savingThrows": ["dexterity", "charisma"],
+    "skills": ["any"],
+    "skillsChoose": 3
+  },
+  "cleric": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple"],
+    "tools": [],
+    "savingThrows": ["wisdom", "charisma"],
+    "skills": ["history", "insight", "medicine", "persuasion", "religion"],
+    "skillsChoose": 2
+  },
+  "druid": {
+    "armor": ["light", "medium", "shields (no metal)"],
+    "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"],
+    "tools": ["herbalism kit"],
+    "savingThrows": ["intelligence", "wisdom"],
+    "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
+    "skillsChoose": 2
+  },
+  "fighter": {
+    "armor": ["all", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "savingThrows": ["strength", "constitution"],
+    "skills": ["acrobatics", "animal handling", "athletics", "history", "insight", "intimidation", "perception", "survival"],
+    "skillsChoose": 2
+  },
+  "monk": {
+    "armor": [],
+    "weapons": ["simple", "shortsword"],
+    "tools": ["artisan's tools", "musical instrument"],
+    "savingThrows": ["strength", "dexterity"],
+    "skills": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
+    "skillsChoose": 2
+  },
+  "paladin": {
+    "armor": ["all", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "savingThrows": ["wisdom", "charisma"],
+    "skills": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"],
+    "skillsChoose": 2
+  },
+  "ranger": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "savingThrows": ["strength", "dexterity"],
+    "skills": ["animal handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"],
+    "skillsChoose": 3
+  },
+  "rogue": {
+    "armor": ["light"],
+    "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
+    "tools": ["thieves' tools"],
+    "savingThrows": ["dexterity", "intelligence"],
+    "skills": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
+    "skillsChoose": 4
+  },
+  "sorcerer": {
+    "armor": [],
+    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+    "tools": [],
+    "savingThrows": ["constitution", "charisma"],
+    "skills": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
+    "skillsChoose": 2
+  },
+  "warlock": {
+    "armor": ["light"],
+    "weapons": ["simple"],
+    "tools": [],
+    "savingThrows": ["wisdom", "charisma"],
+    "skills": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"],
+    "skillsChoose": 2
+  },
+  "wizard": {
+    "armor": [],
+    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+    "tools": [],
+    "savingThrows": ["intelligence", "wisdom"],
+    "skills": ["arcana", "history", "insight", "investigation", "medicine", "religion"],
+    "skillsChoose": 2
+  }
+}

@@ -5,13 +5,12 @@
       "average_per_level": 5
     },
     "Proficiencies": {
-      "content": [
-        "**Armor:** Light armor",
-        "**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords",
-        "**Tools:** Thieves’ tools",
-        "**Saving Throws:** Dexterity, Intelligence",
-        "**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"
-      ]
+    "armor": ["light"],
+    "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
+    "tools": ["thieves' tools"],
+    "savingThrows": ["dexterity", "intelligence"],
+    "skills": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
+    "skillsChoose": 4
     },
     "Equipment": {
       "content": [

@@ -5,13 +5,12 @@
                 "average_per_level": 5
             },
             "Proficiencies": {
-                "content": [
-                    "**Armor:** Light armor, medium armor, shields",
-                    "**Weapons:** Simple weapons",
-                    "**Tools:** None",
-                    "**Saving Throws:** Wisdom, Charisma",
-                    "**Skills:** Choose two from History, Insight, Medicine, Persuasion, and Religion"
-                ]
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple"],
+    "tools": [],
+    "savingThrows": ["wisdom", "charisma"],
+    "skills": ["history", "insight", "medicine", "persuasion", "religion"],
+    "skillsChoose": 2
             },
             "Equipment": {
                 "content": [
