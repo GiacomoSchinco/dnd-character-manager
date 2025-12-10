@@ -1,69 +1,52 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 8,
-                "average_per_level": 5
-            },
-            "Proficiencies": {
-    "armor": [],
-    "weapons": ["simple", "shortsword"],
-    "tools": ["artisan's tools", "musical instrument"],
-    "savingThrows": ["strength", "dexterity"],
-    "skills": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["shortsword", "any simple weapon"]},
-                    {"choices": ["dungeoneer’s pack", "explorer’s pack"]},
-                    {"fixed": ["10 darts"]}
-                ]
-            },
-            "The Monk": {
-                "progression": [
-                    {"lv": 1, "features": ["Unarmored Defense", "Martial Arts"]},
-                    {"lv": 2, "features": ["Ki", "Unarmored Movement"]},
-                    {"lv": 3, "features": ["Monastic Tradition", "Deflect Missiles"]},
-                    {"lv": 4, "features": ["Ability Score Improvement", "Slow Fall"]},
-                    {"lv": 5, "features": ["Extra Attack", "Stunning Strike"]},
-                    {"lv": 6, "features": ["Ki-Empowered Strikes", "Monastic Tradition Feature"]},
-                    {"lv": 7, "features": ["Evasion", "Stillness of Mind"]},
-                    {"lv": 8, "features": ["Ability Score Improvement"]},
-                    {"lv": 9, "features": ["Unarmored Movement improvement"]},
-                    {"lv": 10, "features": ["Purity of Body"]},
-                    {"lv": 11, "features": ["Monastic Tradition Feature"]},
-                    {"lv": 12, "features": ["Ability Score Improvement"]},
-                    {"lv": 13, "features": ["Tongue of the Sun and Moon"]},
-                    {"lv": 14, "features": ["Diamond Soul"]},
-                    {"lv": 15, "features": ["Timeless Body"]},
-                    {"lv": 16, "features": ["Ability Score Improvement"]},
-                    {"lv": 17, "features": ["Monastic Tradition Feature"]},
-                    {"lv": 18, "features": ["Empty Body"]},
-                    {"lv": 19, "features": ["Ability Score Improvement"]},
-                    {"lv": 20, "features": ["Perfect Self"]}
-                ],
-                "monkProgression": [
-                    {"lv": 1, "die": "1d4", "kiPoints": 0, "bonus": 0},
-                    {"lv": 2, "die": "1d4", "kiPoints": 2, "bonus": 10},
-                    {"lv": 3, "die": "1d4", "kiPoints": 3, "bonus": 10},
-                    {"lv": 4, "die": "1d4", "kiPoints": 4, "bonus": 10},
-                    {"lv": 5, "die": "1d6", "kiPoints": 5, "bonus": 10},
-                    {"lv": 6, "die": "1d6", "kiPoints": 6, "bonus": 15},
-                    {"lv": 7, "die": "1d6", "kiPoints": 7, "bonus": 15},
-                    {"lv": 8, "die": "1d6", "kiPoints": 8, "bonus": 15},
-                    {"lv": 9, "die": "1d6", "kiPoints": 9, "bonus": 15},
-                    {"lv": 10, "die": "1d6", "kiPoints": 10, "bonus": 20},
-                    {"lv": 11, "die": "1d8", "kiPoints": 11, "bonus": 20},
-                    {"lv": 12, "die": "1d8", "kiPoints": 12, "bonus": 20},
-                    {"lv": 13, "die": "1d8", "kiPoints": 13, "bonus": 20},
-                    {"lv": 14, "die": "1d8", "kiPoints": 14, "bonus": 25},
-                    {"lv": 15, "die": "1d8", "kiPoints": 15, "bonus": 25},
-                    {"lv": 16, "die": "1d8", "kiPoints": 16, "bonus": 25},
-                    {"lv": 17, "die": "1d10", "kiPoints": 17, "bonus": 25},
-                    {"lv": 18, "die": "1d10", "kiPoints": 18, "bonus": 30},
-                    {"lv": 19, "die": "1d10", "kiPoints": 19, "bonus": 30},
-                    {"lv": 20, "die": "1d10", "kiPoints": 20, "bonus": 30}
-                ]
-            }
+    "name": "Monk",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 8,
+            "average_per_level": 5
+        },
+        "proficiencies": {
+            "armor": [],
+            "weapons": ["simple", "shortsword"],
+            "tools": ["artisan's tools", "musical instrument"],
+            "savingThrows": ["strength", "dexterity"],
+            "skills": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
+            "skillsChoose": 2,
+            "hasSpellcasting": false,
+            "hasRage": false,
+            "hasKi": true,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": false,
+            "hasInvocations": false
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["shortsword", "any simple weapon"]},
+                {"choices": ["dungeoneer’s pack", "explorer’s pack"]},
+                {"fixed": ["10 darts"]}
+            ]
         }
-    }
+    },
+    "progression": [
+        {"lv": 1, "features": ["Unarmored Defense", "Martial Arts"]},
+        {"lv": 2, "features": ["Ki", "Unarmored Movement"]},
+        {"lv": 3, "features": ["Monastic Tradition", "Deflect Missiles"]},
+        {"lv": 4, "features": ["Ability Score Improvement", "Slow Fall"]},
+        {"lv": 5, "features": ["Extra Attack", "Stunning Strike"]},
+        {"lv": 6, "features": ["Ki-Empowered Strikes", "Monastic Tradition Feature"]},
+        {"lv": 7, "features": ["Evasion", "Stillness of Mind"]},
+        {"lv": 8, "features": ["Ability Score Improvement"]},
+        {"lv": 9, "features": ["Unarmored Movement improvement"]},
+        {"lv": 10, "features": ["Purity of Body"]},
+        {"lv": 11, "features": ["Monastic Tradition Feature"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["Tongue of the Sun and Moon"]},
+        {"lv": 14, "features": ["Diamond Soul"]},
+        {"lv": 15, "features": ["Timeless Body"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["Monastic Tradition Feature"]},
+        {"lv": 18, "features": ["Empty Body"]},
+        {"lv": 19, "features": ["Ability Score Improvement"]},
+        {"lv": 20, "features": ["Perfect Self"]}
+    ]
+}

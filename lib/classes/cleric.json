@@ -1,72 +1,54 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 8,
-                "average_per_level": 5
-            },
-            "Proficiencies": {
-    "armor": ["light", "medium", "shields"],
-    "weapons": ["simple"],
-    "tools": [],
-    "savingThrows": ["wisdom", "charisma"],
-    "skills": ["history", "insight", "medicine", "persuasion", "religion"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["mace", "warhammer (if proficient)"]},
-                    {"choices": ["scale mail", "leather armor", "chain mail (if proficient)"]},
-                    {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
-                    {"choices": ["priest’s pack", "explorer’s pack"]},
-                    {"fixed": ["shield","holy symbol"]}
-                ]
-            },
-            "The Cleric": {
-                    "progression": [
-                        {"lv": 1, "features": ["Spellcasting", "Divine Domain"]},
-                        {"lv": 2, "features": ["Channel Divinity (1/rest)", "Divine Domain Feature"]},
-                        {"lv": 3, "features": ["-"]},
-                        {"lv": 4, "features": ["Ability Score Improvement"]},
-                        {"lv": 5, "features": ["Destroy Undead (CR 1/2)"]},
-                        {"lv": 6, "features": ["Channel Divinity (2/rest)", "Divine Domain Feature"]},
-                        {"lv": 7, "features": ["-"]},
-                        {"lv": 8, "features": ["Ability Score Improvement", "Destroy Undead (CR 1)", "Divine Domain Feature"]},
-                        {"lv": 9, "features": ["-"]},
-                        {"lv": 10, "features": ["Divine Intervention"]},
-                        {"lv": 11, "features": ["Destroy Undead (CR 2)"]},
-                        {"lv": 12, "features": ["Ability Score Improvement"]},
-                        {"lv": 13, "features": ["-"]},
-                        {"lv": 14, "features": ["Destroy Undead (CR 3)"]},
-                        {"lv": 15, "features": ["-"]},
-                        {"lv": 16, "features": ["Ability Score Improvement"]},
-                        {"lv": 17, "features": ["Destroy Undead (CR 4)", "Divine Domain Feature"]},
-                        {"lv": 18, "features": ["Channel Divinity (3/rest)"]},
-                        {"lv": 19, "features": ["Ability Score Improvement"]},
-                        {"lv": 20, "features": ["Divine Intervention improvement"]}
-                    ],
-                    "spellcastingProgression": [
-                        {"lv": 1, "cantripsKnown": 3, "spellSlots": {"1st": 2}},
-                        {"lv": 2, "cantripsKnown": 3, "spellSlots": {"1st": 3}},
-                        {"lv": 3, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 2}},
-                        {"lv": 4, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3}},
-                        {"lv": 5, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 2}},
-                        {"lv": 6, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3}},
-                        {"lv": 7, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 1}},
-                        {"lv": 8, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 2}},
-                        {"lv": 9, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
-                        {"lv": 10, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2}},
-                        {"lv": 11, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                        {"lv": 12, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                        {"lv": 13, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                        {"lv": 14, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                        {"lv": 15, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                        {"lv": 16, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                        {"lv": 17, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                        {"lv": 18, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                        {"lv": 19, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 1, "8th": 1, "9th": 1}},
-                        {"lv": 20, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 2, "8th": 1, "9th": 1}}
-                    ]
-                    }
-            }
-            
-    }
+    "name": "Cleric",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 8,
+            "average_per_level": 5
+        },
+        "proficiencies": {
+            "armor": ["light", "medium", "shields"],
+            "weapons": ["simple"],
+            "tools": [],
+            "savingThrows": ["wisdom", "charisma"],
+            "skills": ["history", "insight", "medicine", "persuasion", "religion"],
+            "skillsChoose": 2,
+            "hasSpellcasting": true,
+            "hasRage": false,
+            "hasKi": false,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": false,
+            "hasInvocations": false
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["mace", "warhammer (if proficient)"]},
+                {"choices": ["scale mail", "leather armor", "chain mail (if proficient)"]},
+                {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
+                {"choices": ["priest’s pack", "explorer’s pack"]},
+                {"fixed": ["shield", "holy symbol"]}
+            ]
+        }
+    },
+    "progression": [
+        {"lv": 1, "features": ["Spellcasting", "Divine Domain"]},
+        {"lv": 2, "features": ["Channel Divinity (1/rest)", "Divine Domain Feature"]},
+        {"lv": 3, "features": ["-"]},
+        {"lv": 4, "features": ["Ability Score Improvement"]},
+        {"lv": 5, "features": ["Destroy Undead (CR 1/2)"]},
+        {"lv": 6, "features": ["Channel Divinity (2/rest)", "Divine Domain Feature"]},
+        {"lv": 7, "features": ["-"]},
+        {"lv": 8, "features": ["Ability Score Improvement", "Destroy Undead (CR 1)", "Divine Domain Feature"]},
+        {"lv": 9, "features": ["-"]},
+        {"lv": 10, "features": ["Divine Intervention"]},
+        {"lv": 11, "features": ["Destroy Undead (CR 2)"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["-"]},
+        {"lv": 14, "features": ["Destroy Undead (CR 3)"]},
+        {"lv": 15, "features": ["-"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["Destroy Undead (CR 4)", "Divine Domain Feature"]},
+        {"lv": 18, "features": ["Channel Divinity (3/rest)"]},
+        {"lv": 19, "features": ["Ability Score Improvement"]},
+        {"lv": 20, "features": ["Divine Intervention improvement"]}
+    ]
+}

@@ -1,71 +1,54 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 8,
-                "average_per_level": 5
-            },
-            "Proficiencies": {
-    "armor": ["light", "medium", "shields (no metal)"],
-    "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"],
-    "tools": ["herbalism kit"],
-    "savingThrows": ["intelligence", "wisdom"],
-    "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["wooden shield", "any simple weapon"]},
-                    {"choices": ["scimitar", "any simple melee weapon"]},
-                    {"fixed": ["leather armor", "explorer’s pack", "druidic focus"]}
-                ]
-            },
-            "The Druid": {
-                "progression": [
-                    {"lv": 1, "features": ["Druidic", "Spellcasting"]},
-                    {"lv": 2, "features": ["Wild Shape", "Druid Circle"]},
-                    {"lv": 3, "features": ["-"]},
-                    {"lv": 4, "features": ["Wild Shape Improvement", "Ability Score Improvement"]},
-                    {"lv": 5, "features": ["-"]},
-                    {"lv": 6, "features": ["Druid Circle feature"]},
-                    {"lv": 7, "features": ["-"]},
-                    {"lv": 8, "features": ["Wild Shape Improvement", "Ability Score Improvement"]},
-                    {"lv": 9, "features": ["-"]},
-                    {"lv": 10, "features": ["Druid Circle feature"]},
-                    {"lv": 11, "features": ["-"]},
-                    {"lv": 12, "features": ["Ability Score Improvement"]},
-                    {"lv": 13, "features": ["-"]},
-                    {"lv": 14, "features": ["Druid Circle feature"]},
-                    {"lv": 15, "features": ["-"]},
-                    {"lv": 16, "features": ["Ability Score Improvement"]},
-                    {"lv": 17, "features": ["Timeless Body", "Beast Spells"]},
-                    {"lv": 18, "features": ["Ability Score Improvement"]},
-                    {"lv": 19, "features": ["Archdruid"]},
-                    {"lv": 20, "features": ["Archdruid"]}
-                ],
-                "spellcastingProgression": [
-                    {"lv": 1, "cantripsKnown": 2, "spellSlots": {"1st": 2}},
-                    {"lv": 2, "cantripsKnown": 2, "spellSlots": {"1st": 3}},
-                    {"lv": 3, "cantripsKnown": 2, "spellSlots": {"1st": 4, "2nd": 2}},
-                    {"lv": 4, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3}},
-                    {"lv": 5, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 2}},
-                    {"lv": 6, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3}},
-                    {"lv": 7, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 1}},
-                    {"lv": 8, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 2}},
-                    {"lv": 9, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
-                    {"lv": 10, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2}},
-                    {"lv": 11, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                    {"lv": 12, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                    {"lv": 13, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                    {"lv": 14, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                    {"lv": 15, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                    {"lv": 16, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                    {"lv": 17, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 18, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 19, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 20, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 2, "8th": 1, "9th": 1}}
-                ]
-                }
-            }
-            
+    "name": "Druid",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 8,
+            "average_per_level": 5
+        },
+        "proficiencies": {
+            "armor": ["light", "medium", "shields (no metal)"],
+            "weapons": ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sickle", "sling", "spear"],
+            "tools": ["herbalism kit"],
+            "savingThrows": ["intelligence", "wisdom"],
+            "skills": ["arcana", "animal handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
+            "skillsChoose": 2,
+            "hasSpellcasting": true,
+            "hasRage": false,
+            "hasKi": false,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": false,
+            "hasInvocations": false
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["wooden shield", "any simple weapon"]},
+                {"choices": ["scimitar", "any simple melee weapon"]},
+                {"fixed": ["leather armor", "explorer’s pack", "druidic focus"]}
+            ]
+        
+    },
+    "progression": [
+        {"lv": 1, "features": ["Druidic", "Spellcasting"]},
+        {"lv": 2, "features": ["Wild Shape", "Druid Circle"]},
+        {"lv": 3, "features": ["-"]},
+        {"lv": 4, "features": ["Wild Shape Improvement", "Ability Score Improvement"]},
+        {"lv": 5, "features": ["-"]},
+        {"lv": 6, "features": ["Druid Circle feature"]},
+        {"lv": 7, "features": ["-"]},
+        {"lv": 8, "features": ["Wild Shape Improvement", "Ability Score Improvement"]},
+        {"lv": 9, "features": ["-"]},
+        {"lv": 10, "features": ["Druid Circle feature"]},
+        {"lv": 11, "features": ["-"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["-"]},
+        {"lv": 14, "features": ["Druid Circle feature"]},
+        {"lv": 15, "features": ["-"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["Timeless Body", "Beast Spells"]},
+        {"lv": 18, "features": ["Ability Score Improvement"]},
+        {"lv": 19, "features": ["Archdruid"]},
+        {"lv": 20, "features": ["Archdruid"]}
+    ]
+}
         }
     

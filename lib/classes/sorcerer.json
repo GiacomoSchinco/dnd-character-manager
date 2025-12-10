@@ -1,92 +1,54 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 6,
-                "average_per_level": 4
-            },
-            "Proficiencies": {
-    "armor": [],
-    "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
-    "tools": [],
-    "savingThrows": ["constitution", "charisma"],
-    "skills": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
-                    {"choices": ["component pouch", "arcane focus"]},
-                    {"choices": ["dungeoneer’s pack", "explorer’s pack"]},
-                    {"fixed": ["two daggers"]}
-                ]
-            },
-            "The Sorcerer": {
-                "progression": [
-                    {"lv": 1, "features": ["Spellcasting", "Sorcerous Origin"]},
-                    {"lv": 2, "features": ["Font of Magic"]},
-                    {"lv": 3, "features": ["Metamagic"]},
-                    {"lv": 4, "features": ["Ability Score Improvement"]},
-                    {"lv": 5, "features": ["-"]},
-                    {"lv": 6, "features": ["Sorcerous Origin Feature"]},
-                    {"lv": 7, "features": ["-"]},
-                    {"lv": 8, "features": ["Ability Score Improvement"]},
-                    {"lv": 9, "features": ["-"]},
-                    {"lv": 10, "features": ["Metamagic"]},
-                    {"lv": 11, "features": ["-"]},
-                    {"lv": 12, "features": ["Ability Score Improvement"]},
-                    {"lv": 13, "features": ["-"]},
-                    {"lv": 14, "features": ["Sorcerous Origin Feature"]},
-                    {"lv": 15, "features": ["-"]},
-                    {"lv": 16, "features": ["Ability Score Improvement"]},
-                    {"lv": 17, "features": ["Metamagic"]},
-                    {"lv": 18, "features": ["Sorcerous Origin Feature"]},
-                    {"lv": 19, "features": ["Ability Score Improvement"]},
-                    {"lv": 20, "features": ["Sorcerous Restoration"]}
-                ],
-                "spellcastingProgression": [
-                    {"lv": 1, "cantripsKnown": 4, "spellsKnown": 2, "spellSlots": {"1st": 2}},
-                    {"lv": 2, "cantripsKnown": 4, "spellsKnown": 3, "spellSlots": {"1st": 3}},
-                    {"lv": 3, "cantripsKnown": 4, "spellsKnown": 4, "spellSlots": {"1st": 4, "2nd": 2}},
-                    {"lv": 4, "cantripsKnown": 5, "spellsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3}},
-                    {"lv": 5, "cantripsKnown": 5, "spellsKnown": 6, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 2}},
-                    {"lv": 6, "cantripsKnown": 5, "spellsKnown": 7, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3}},
-                    {"lv": 7, "cantripsKnown": 5, "spellsKnown": 8, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 1}},
-                    {"lv": 8, "cantripsKnown": 5, "spellsKnown": 9, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 2}},
-                    {"lv": 9, "cantripsKnown": 5, "spellsKnown": 10, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
-                    {"lv": 10, "cantripsKnown": 6, "spellsKnown": 11, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2}},
-                    {"lv": 11, "cantripsKnown": 6, "spellsKnown": 12, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                    {"lv": 12, "cantripsKnown": 6, "spellsKnown": 12, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1}},
-                    {"lv": 13, "cantripsKnown": 13, "spellsKnown": 13, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                    {"lv": 14, "cantripsKnown": 13, "spellsKnown": 13, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1}},
-                    {"lv": 15, "cantripsKnown": 14, "spellsKnown": 14, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                    {"lv": 16, "cantripsKnown": 14, "spellsKnown": 14, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1}},
-                    {"lv": 17, "cantripsKnown": 15, "spellsKnown": 15, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 18, "cantripsKnown": 15, "spellsKnown": 15, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 1, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 19, "cantripsKnown": 15, "spellsKnown": 15, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 3, "6th": 2, "7th": 1, "8th": 1, "9th": 1}},
-                    {"lv": 20, "cantripsKnown": 15, "spellsKnown": 15, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 3, "6th": 2, "7th": 2, "8th": 1, "9th": 1}}
-                ],
-                "sorceryPointsProgression": [
-                    {"lv": 1, "sorceryPoints": 0},
-                    {"lv": 2, "sorceryPoints": 2},
-                    {"lv": 3, "sorceryPoints": 3},
-                    {"lv": 4, "sorceryPoints": 4},
-                    {"lv": 5, "sorceryPoints": 5},
-                    {"lv": 6, "sorceryPoints": 6},
-                    {"lv": 7, "sorceryPoints": 7},
-                    {"lv": 8, "sorceryPoints": 8},
-                    {"lv": 9, "sorceryPoints": 9},
-                    {"lv": 10, "sorceryPoints": 10},
-                    {"lv": 11, "sorceryPoints": 11},
-                    {"lv": 12, "sorceryPoints": 12},
-                    {"lv": 13, "sorceryPoints": 13},
-                    {"lv": 14, "sorceryPoints": 14},
-                    {"lv": 15, "sorceryPoints": 15},
-                    {"lv": 16, "sorceryPoints": 16},
-                    {"lv": 17, "sorceryPoints": 17},
-                    {"lv": 18, "sorceryPoints": 18},
-                    {"lv": 19, "sorceryPoints": 19},
-                    {"lv": 20, "sorceryPoints": 20}
-                ]
-            }
+    "name": "Sorcerer",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 6,
+            "average_per_level": 4
+        },
+        "proficiencies": {
+            "armor": [],
+            "weapons": ["dagger", "dart", "sling", "quarterstaff", "light crossbow"],
+            "tools": [],
+            "savingThrows": ["constitution", "charisma"],
+            "skills": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
+            "skillsChoose": 2,
+            "hasSpellcasting": true,
+            "hasRage": false,
+            "hasKi": false,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": true,
+            "hasMetamagic": true,
+            "hasInvocations": false
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
+                {"choices": ["component pouch", "arcane focus"]},
+                {"choices": ["dungeoneer’s pack", "explorer’s pack"]},
+                {"fixed": ["two daggers"]}
+            ]
         }
-    }
+    },
+    "progression": [
+        {"lv": 1, "features": ["Spellcasting", "Sorcerous Origin"]},
+        {"lv": 2, "features": ["Font of Magic"]},
+        {"lv": 3, "features": ["Metamagic"]},
+        {"lv": 4, "features": ["Ability Score Improvement"]},
+        {"lv": 5, "features": ["-"]},
+        {"lv": 6, "features": ["Sorcerous Origin Feature"]},
+        {"lv": 7, "features": ["-"]},
+        {"lv": 8, "features": ["Ability Score Improvement"]},
+        {"lv": 9, "features": ["-"]},
+        {"lv": 10, "features": ["Metamagic"]},
+        {"lv": 11, "features": ["-"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["-"]},
+        {"lv": 14, "features": ["Sorcerous Origin Feature"]},
+        {"lv": 15, "features": ["-"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["Metamagic"]},
+        {"lv": 18, "features": ["Sorcerous Origin Feature"]},
+        {"lv": 19, "features": ["Ability Score Improvement"]},
+        {"lv": 20, "features": ["Sorcerous Restoration"]}
+    ]
+}

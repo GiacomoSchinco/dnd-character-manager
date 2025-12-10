@@ -1,70 +1,52 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 12,
-                "average_per_level": 7
-            },
-            "Proficiencies": {
-    "armor": ["light", "medium", "shields"],
-    "weapons": ["simple", "martial"],
-    "tools": [],
-    "savingThrows": ["strength", "constitution"],
-    "skills": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["a greataxe", "any martial melee weapon"]},
-                    {"choices": ["two handaxes", "any simple weapon"]},
-                    {"fixed": "An explorer’s pack and four javelins"}
-                ]
-            },
-            "The Barbarian": {
-                                "progression": [
-                                      { "lv": 1, "features": ["Rage", "Unarmored Defense"] },
-                                      { "lv": 2, "features": ["Reckless Attack", "Danger Sense"] },
-                                      { "lv": 3, "features": ["Primal Path"] },
-                                      { "lv": 4, "features": ["Ability Score Improvement"] },
-                                      { "lv": 5, "features": ["Extra Attack", "Fast Movement"] },
-                                      { "lv": 6, "features": ["Path feature"] },
-                                      { "lv": 7, "features": ["Feral Instinct"] },
-                                      { "lv": 8, "features": ["Ability Score Improvement"] },
-                                      { "lv": 9, "features": ["Brutal Critical (1 die)"] },
-                                      { "lv": 10, "features": ["Path feature"] },
-                                      { "lv": 11, "features": ["Relentless"] },
-                                      { "lv": 12, "features": ["Ability Score Improvement"] },
-                                      { "lv": 13, "features": ["Brutal Critical (2 dice)"] },
-                                      { "lv": 14, "features": ["Path feature"] },
-                                      { "lv": 15, "features": ["Persistent Rage"] },
-                                      { "lv": 16, "features": ["Ability Score Improvement"] },
-                                      { "lv": 17, "features": ["Brutal Critical (3 dice)"] },
-                                      { "lv": 18, "features": ["Indomitable Might"] },
-                                      { "lv": 19, "features": ["Ability Score Improvement"] },
-                                      { "lv": 20, "features": ["Primal Champion"] }
-                                ],
-                                "rageProgression": [
-                                    {"lv": 1, "rages": 2, "rageDamage": "+2"},
-                                    {"lv": 2, "rages": 2, "rageDamage": "+2"},
-                                    {"lv": 3, "rages": 3, "rageDamage": "+2"},
-                                    {"lv": 4, "rages": 3, "rageDamage": "+2"},
-                                    {"lv": 5, "rages": 3, "rageDamage": "+2"},
-                                    {"lv": 6, "rages": 4, "rageDamage": "+2"},
-                                    {"lv": 7, "rages": 4, "rageDamage": "+2"},
-                                    {"lv": 8, "rages": 4, "rageDamage": "+2"},
-                                    {"lv": 9, "rages": 4, "rageDamage": "+3"},
-                                    {"lv": 10, "rages": 4, "rageDamage": "+3"},
-                                    {"lv": 11, "rages": 4, "rageDamage": "+3"},
-                                    {"lv": 12, "rages": 5, "rageDamage": "+3"},
-                                    {"lv": 13, "rages": 5, "rageDamage": "+3"},
-                                    {"lv": 14, "rages": 5, "rageDamage": "+3"},
-                                    {"lv": 15, "rages": 5, "rageDamage": "+3"},
-                                    {"lv": 16, "rages": 5, "rageDamage": "+4"},
-                                    {"lv": 17, "rages": 6, "rageDamage": "+4"},
-                                    {"lv": 18, "rages": 6, "rageDamage": "+4"},
-                                    {"lv": 19, "rages": 6, "rageDamage": "+4"},
-                                    {"lv": 20, "rages": "Unlimited", "rageDamage": "+4"}
-                                ]
-            }   
-        }
+  "name": "Barbarian",
+  "class_features": {
+    "hit_points": {
+      "hit_dice": 12,
+      "average_per_level": 7
+    },
+    "proficiencies": {
+      "armor": ["light", "medium", "shields"],
+      "weapons": ["simple", "martial"],
+      "tools": [],
+      "savingThrows": ["strength", "constitution"],
+      "skills": ["animal handling", "athletics", "intimidation", "nature", "perception", "survival"],
+      "skillsChoose": 2,
+      "hasSpellcasting": false,
+      "hasRage": true,
+      "hasKi": false,
+      "hasSneakAttack": false,
+      "hasSorceryPoints": false,
+      "hasInvocations": false
+    },
+    "equipment": {
+      "items": [
+        { "choices": ["a greataxe", "any martial melee weapon"] },
+        { "choices": ["two handaxes", "any simple weapon"] },
+        { "fixed": ["An explorer’s pack", "four javelins"] }
+      ]
     }
-    
+  },
+  "progression": [
+    { "lv": 1, "features": ["Rage", "Unarmored Defense"] },
+    { "lv": 2, "features": ["Reckless Attack", "Danger Sense"] },
+    { "lv": 3, "features": ["Primal Path"] },
+    { "lv": 4, "features": ["Ability Score Improvement"] },
+    { "lv": 5, "features": ["Extra Attack", "Fast Movement"] },
+    { "lv": 6, "features": ["Path feature"] },
+    { "lv": 7, "features": ["Feral Instinct"] },
+    { "lv": 8, "features": ["Ability Score Improvement"] },
+    { "lv": 9, "features": ["Brutal Critical (1 die)"] },
+    { "lv": 10, "features": ["Path feature"] },
+    { "lv": 11, "features": ["Relentless"] },
+    { "lv": 12, "features": ["Ability Score Improvement"] },
+    { "lv": 13, "features": ["Brutal Critical (2 dice)"] },
+    { "lv": 14, "features": ["Path feature"] },
+    { "lv": 15, "features": ["Persistent Rage"] },
+    { "lv": 16, "features": ["Ability Score Improvement"] },
+    { "lv": 17, "features": ["Brutal Critical (3 dice)"] },
+    { "lv": 18, "features": ["Indomitable Might"] },
+    { "lv": 19, "features": ["Ability Score Improvement"] },
+    { "lv": 20, "features": ["Primal Champion"] }
+  ]
+}

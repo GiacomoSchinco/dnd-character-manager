@@ -1,70 +1,53 @@
 {
-  "Class Features": {
-    "Hit Points": {
+  "name": "Rogue",
+  "class_features": {
+    "hit_points": {
       "hit_dice": 8,
       "average_per_level": 5
     },
-    "Proficiencies": {
-    "armor": ["light"],
-    "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
-    "tools": ["thieves' tools"],
-    "savingThrows": ["dexterity", "intelligence"],
-    "skills": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
-    "skillsChoose": 4
+    "proficiencies": {
+      "armor": ["light"],
+      "weapons": ["simple", "hand crossbow", "longsword", "rapier", "shortsword"],
+      "tools": ["thieves' tools"],
+      "savingThrows": ["dexterity", "intelligence"],
+      "skills": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight of hand", "stealth"],
+      "skillsChoose": 4,
+      "hasSpellcasting": false,
+      "hasRage": false,
+      "hasKi": false,
+      "hasSneakAttack": true,
+      "hasSorceryPoints": false,
+      "hasInvocations": false
     },
-    "Equipment": {
+    "equipment": {
       "items": [
         {"choices": ["rapier", "shortsword"]},
         {"choices": ["shortbow and quiver of 20 arrows", "shortsword"]},
         {"choices": ["burglar’s pack", "dungeoneer’s pack", "explorer’s pack"]},
         {"fixed": ["leather armor", "two daggers", "thieves’ tools"]}
       ]
-    },
-    "The Rogue": {
-      "progression": [
-        {"lv": 1, "features": ["Expertise", "Sneak Attack", "Thieves’ Cant"]},
-        {"lv": 2, "features": ["Cunning Action"]},
-        {"lv": 3, "features": ["Roguish Archetype"]},
-        {"lv": 4, "features": ["Ability Score Improvement"]},
-        {"lv": 5, "features": ["Uncanny Dodge"]},
-        {"lv": 6, "features": ["Expertise"]},
-        {"lv": 7, "features": ["Evasion"]},
-        {"lv": 8, "features": ["Ability Score Improvement"]},
-        {"lv": 9, "features": ["Roguish Archetype feature"]},
-        {"lv": 10, "features": ["Ability Score Improvement"]},
-        {"lv": 11, "features": ["Reliable Talent"]},
-        {"lv": 12, "features": ["Ability Score Improvement"]},
-        {"lv": 13, "features": ["Roguish Archetype Feature"]},
-        {"lv": 14, "features": ["Blindsense"]},
-        {"lv": 15, "features": ["Slippery Mind"]},
-        {"lv": 16, "features": ["Ability Score Improvement"]},
-        {"lv": 17, "features": ["Roguish Archetype Feature"]},
-        {"lv": 18, "features": ["Elusive"]},
-        {"lv": 19, "features": ["Ability Score Improvement"]},
-        {"lv": 20, "features": ["Stroke of Luck"]}
-      ],
-      "sneakAttackProgression": [
-        {"lv": 1, "dice": "1d6"},
-        {"lv": 2, "dice": "1d6"},
-        {"lv": 3, "dice": "2d6"},
-        {"lv": 4, "dice": "2d6"},
-        {"lv": 5, "dice": "3d6"},
-        {"lv": 6, "dice": "3d6"},
-        {"lv": 7, "dice": "4d6"},
-        {"lv": 8, "dice": "4d6"},
-        {"lv": 9, "dice": "5d6"},
-        {"lv": 10, "dice": "5d6"},
-        {"lv": 11, "dice": "6d6"},
-        {"lv": 12, "dice": "6d6"},
-        {"lv": 13, "dice": "7d6"},
-        {"lv": 14, "dice": "7d6"},
-        {"lv": 15, "dice": "8d6"},
-        {"lv": 16, "dice": "8d6"},
-        {"lv": 17, "dice": "9d6"},
-        {"lv": 18, "dice": "9d6"},
-        {"lv": 19, "dice": "10d6"},
-        {"lv": 20, "dice": "10d6"}
-      ]
-    }}
-
+    }
+  },
+  "progression": [
+    {"lv": 1, "features": ["Expertise", "Sneak Attack", "Thieves’ Cant"]},
+    {"lv": 2, "features": ["Cunning Action"]},
+    {"lv": 3, "features": ["Roguish Archetype"]},
+    {"lv": 4, "features": ["Ability Score Improvement"]},
+    {"lv": 5, "features": ["Uncanny Dodge"]},
+    {"lv": 6, "features": ["Expertise"]},
+    {"lv": 7, "features": ["Evasion"]},
+    {"lv": 8, "features": ["Ability Score Improvement"]},
+    {"lv": 9, "features": ["Roguish Archetype feature"]},
+    {"lv": 10, "features": ["Ability Score Improvement"]},
+    {"lv": 11, "features": ["Reliable Talent"]},
+    {"lv": 12, "features": ["Ability Score Improvement"]},
+    {"lv": 13, "features": ["Roguish Archetype Feature"]},
+    {"lv": 14, "features": ["Blindsense"]},
+    {"lv": 15, "features": ["Slippery Mind"]},
+    {"lv": 16, "features": ["Ability Score Improvement"]},
+    {"lv": 17, "features": ["Roguish Archetype Feature"]},
+    {"lv": 18, "features": ["Elusive"]},
+    {"lv": 19, "features": ["Ability Score Improvement"]},
+    {"lv": 20, "features": ["Stroke of Luck"]}
+  ]
 }

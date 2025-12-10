@@ -1,92 +1,54 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 8,
-                "average_per_level": 5
-            },
-            "Proficiencies": {
-    "armor": ["light"],
-    "weapons": ["simple"],
-    "tools": [],
-    "savingThrows": ["wisdom", "charisma"],
-    "skills": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
-                    {"choices": ["component pouch", "arcane focus"]},
-                    {"choices": ["scholar’s pack", "dungeoneer’s pack"]},
-                    {"fixed": ["leather armor", "any simple weapon", "two daggers"]}
-                ]
-            },
-            "The Warlock": {
-                "progression": [
-                    {"lv": 1, "features": ["Otherworldly Patron", "Pact Magic"]},
-                    {"lv": 2, "features": ["Eldritch Invocations"]},
-                    {"lv": 3, "features": ["Pact Boon"]},
-                    {"lv": 4, "features": ["Ability Score Improvement"]},
-                    {"lv": 5, "features": ["-"]},
-                    {"lv": 6, "features": ["Otherworldly Patron feature"]},
-                    {"lv": 7, "features": ["-"]},
-                    {"lv": 8, "features": ["Ability Score Improvement"]},
-                    {"lv": 9, "features": ["-"]},
-                    {"lv": 10, "features": ["Otherworldly Patron feature"]},
-                    {"lv": 11, "features": ["Mystic Arcanum (6th level)"]},
-                    {"lv": 12, "features": ["Ability Score Improvement"]},
-                    {"lv": 13, "features": ["Mystic Arcanum (7th level)"]},
-                    {"lv": 14, "features": ["Otherworldly Patron feature"]},
-                    {"lv": 15, "features": ["Mystic Arcanum (8th level)"]},
-                    {"lv": 16, "features": ["Ability Score Improvement"]},
-                    {"lv": 17, "features": ["Mystic Arcanum (9th level)"]},
-                    {"lv": 18, "features": ["-"]},
-                    {"lv": 19, "features": ["Ability Score Improvement"]},
-                    {"lv": 20, "features": ["Eldritch Master"]}
-                ],
-                "spellcastingProgression": [
-                    {"lv": 1, "cantripsKnown": 2, "spellsKnown": 2, "spellSlots": 1, "slotLevel": "1st"},
-                    {"lv": 2, "cantripsKnown": 2, "spellsKnown": 3, "spellSlots": 2, "slotLevel": "1st"},
-                    {"lv": 3, "cantripsKnown": 2, "spellsKnown": 4, "spellSlots": 2, "slotLevel": "2nd"},
-                    {"lv": 4, "cantripsKnown": 3, "spellsKnown": 5, "spellSlots": 2, "slotLevel": "2nd"},
-                    {"lv": 5, "cantripsKnown": 3, "spellsKnown": 6, "spellSlots": 2, "slotLevel": "3rd"},
-                    {"lv": 6, "cantripsKnown": 3, "spellsKnown": 7, "spellSlots": 2, "slotLevel": "3rd"},
-                    {"lv": 7, "cantripsKnown": 3, "spellsKnown": 8, "spellSlots": 2, "slotLevel": "4th"},
-                    {"lv": 8, "cantripsKnown": 3, "spellsKnown": 9, "spellSlots": 2, "slotLevel": "4th"},
-                    {"lv": 9, "cantripsKnown": 3, "spellsKnown": 10, "spellSlots": 2, "slotLevel": "5th"},
-                    {"lv": 10, "cantripsKnown": 4, "spellsKnown": 10, "spellSlots": 2, "slotLevel": "5th"},
-                    {"lv": 11, "cantripsKnown": 4, "spellsKnown": 11, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 12, "cantripsKnown": 4, "spellsKnown": 11, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 13, "cantripsKnown": 4, "spellsKnown": 12, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 14, "cantripsKnown": 4, "spellsKnown": 12, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 15, "cantripsKnown": 4, "spellsKnown": 13, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 16, "cantripsKnown": 4, "spellsKnown": 13, "spellSlots": 3, "slotLevel": "5th"},
-                    {"lv": 17, "cantripsKnown": 4, "spellsKnown": 14, "spellSlots": 4, "slotLevel": "5th"},
-                    {"lv": 18, "cantripsKnown": 4, "spellsKnown": 14, "spellSlots": 4, "slotLevel": "5th"},
-                    {"lv": 19, "cantripsKnown": 4, "spellsKnown": 15, "spellSlots": 4, "slotLevel": "5th"},
-                    {"lv": 20, "cantripsKnown": 4, "spellsKnown": 15, "spellSlots": 4, "slotLevel": "5th"}
-                ],
-                "invocationsProgression": [
-                    {"lv": 1, "invocationsKnown": 0},
-                    {"lv": 2, "invocationsKnown": 2},
-                    {"lv": 3, "invocationsKnown": 2},
-                    {"lv": 4, "invocationsKnown": 2},
-                    {"lv": 5, "invocationsKnown": 3},
-                    {"lv": 6, "invocationsKnown": 3},
-                    {"lv": 7, "invocationsKnown": 4},
-                    {"lv": 8, "invocationsKnown": 4},
-                    {"lv": 9, "invocationsKnown": 5},
-                    {"lv": 10, "invocationsKnown": 5},
-                    {"lv": 11, "invocationsKnown": 5},
-                    {"lv": 12, "invocationsKnown": 6},
-                    {"lv": 13, "invocationsKnown": 6},
-                    {"lv": 14, "invocationsKnown": 6},
-                    {"lv": 15, "invocationsKnown": 7},
-                    {"lv": 16, "invocationsKnown": 7},
-                    {"lv": 17, "invocationsKnown": 7},
-                    {"lv": 18, "invocationsKnown": 8},
-                    {"lv": 19, "invocationsKnown": 8},
-                    {"lv": 20, "invocationsKnown": 8}
-                ]
-            }}
-            
-    }
+    "name": "Warlock",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 8,
+            "average_per_level": 5
+        },
+        "proficiencies": {
+            "armor": ["light"],
+            "weapons": ["simple"],
+            "tools": [],
+            "savingThrows": ["wisdom", "charisma"],
+            "skills": ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"],
+            "skillsChoose": 2,
+            "hasSpellcasting": true,
+            "hasRage": false,
+            "hasKi": false,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": false,
+            "hasInvocations": true,
+            "hasPactMagic": true
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["light crossbow and 20 bolts", "any simple weapon"]},
+                {"choices": ["component pouch", "arcane focus"]},
+                {"choices": ["scholar’s pack", "dungeoneer’s pack"]},
+                {"fixed": ["leather armor", "any simple weapon", "two daggers"]}
+            ]
+        }
+    },
+    "progression": [
+        {"lv": 1, "features": ["Otherworldly Patron", "Pact Magic"]},
+        {"lv": 2, "features": ["Eldritch Invocations"]},
+        {"lv": 3, "features": ["Pact Boon"]},
+        {"lv": 4, "features": ["Ability Score Improvement"]},
+        {"lv": 5, "features": ["-"]},
+        {"lv": 6, "features": ["Otherworldly Patron feature"]},
+        {"lv": 7, "features": ["-"]},
+        {"lv": 8, "features": ["Ability Score Improvement"]},
+        {"lv": 9, "features": ["-"]},
+        {"lv": 10, "features": ["Otherworldly Patron feature"]},
+        {"lv": 11, "features": ["Mystic Arcanum (6th level)"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["Mystic Arcanum (7th level)"]},
+        {"lv": 14, "features": ["Otherworldly Patron feature"]},
+        {"lv": 15, "features": ["Mystic Arcanum (8th level)"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["Mystic Arcanum (9th level)"]},
+        {"lv": 18, "features": ["-"]},
+        {"lv": 19, "features": ["Ability Score Improvement"]},
+        {"lv": 20, "features": ["Eldritch Master"]}
+    ]
+}

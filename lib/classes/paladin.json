@@ -1,70 +1,53 @@
 {
-        "Class Features": {
-            "Hit Points": {
-                "hit_dice": 10,
-                "average_per_level": 6
-            },
-            "Proficiencies": {
-    "armor": ["all", "shields"],
-    "weapons": ["simple", "martial"],
-    "tools": [],
-    "savingThrows": ["wisdom", "charisma"],
-    "skills": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"],
-    "skillsChoose": 2
-            },
-            "Equipment": {
-                "items": [
-                    {"choices": ["a martial weapon and a shield", "two martial weapons"]},
-                    {"choices": ["five javelins", "any simple melee weapon"]},
-                    {"choices": ["priest’s pack", "explorer’s pack"]},
-                    {"fixed": ["chain mail", "holy symbol"]}
-                ]
-            },
-            "The Paladin": {
-                "progression": [
-                    {"lv": 1, "features": ["Divine Sense", "Lay on Hands"]},
-                    {"lv": 2, "features": ["Fighting Style", "Spellcasting", "Divine Smite"]},
-                    {"lv": 3, "features": ["Divine Health", "Sacred Oath"]},
-                    {"lv": 4, "features": ["Ability Score Improvement"]},
-                    {"lv": 5, "features": ["Extra Attack"]},
-                    {"lv": 6, "features": ["Aura of Protection"]},
-                    {"lv": 7, "features": ["Sacred Oath feature"]},
-                    {"lv": 8, "features": ["Ability Score Improvement"]},
-                    {"lv": 9, "features": ["-"]},
-                    {"lv": 10, "features": ["Aura of Courage"]},
-                    {"lv": 11, "features": ["Improved Divine Smite"]},
-                    {"lv": 12, "features": ["Ability Score Improvement"]},
-                    {"lv": 13, "features": ["-"]},
-                    {"lv": 14, "features": ["Cleansing Touch"]},
-                    {"lv": 15, "features": ["Sacred Oath feature"]},
-                    {"lv": 16, "features": ["Ability Score Improvement"]},
-                    {"lv": 17, "features": ["-"]},
-                    {"lv": 18, "features": ["Aura improvements"]},
-                    {"lv": 19, "features": ["Ability Score Improvement"]},
-                    {"lv": 20, "features": ["Sacred Oath feature"]}
-                ],
-                "spellcastingProgression": [
-                    {"lv": 1, "spellSlots": {}},
-                    {"lv": 2, "spellSlots": {"1st": 2}},
-                    {"lv": 3, "spellSlots": {"1st": 3}},
-                    {"lv": 4, "spellSlots": {"1st": 3}},
-                    {"lv": 5, "spellSlots": {"1st": 4, "2nd": 2}},
-                    {"lv": 6, "spellSlots": {"1st": 4, "2nd": 2}},
-                    {"lv": 7, "spellSlots": {"1st": 4, "2nd": 3}},
-                    {"lv": 8, "spellSlots": {"1st": 4, "2nd": 3}},
-                    {"lv": 9, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 2}},
-                    {"lv": 10, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 2}},
-                    {"lv": 11, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3}},
-                    {"lv": 12, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3}},
-                    {"lv": 13, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 1}},
-                    {"lv": 14, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 1}},
-                    {"lv": 15, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 2}},
-                    {"lv": 16, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 2}},
-                    {"lv": 17, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3}},
-                    {"lv": 18, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3}},
-                    {"lv": 19, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
-                    {"lv": 20, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}}
-                ]
-            }}
-            
-    }
+    "name": "Paladin",
+    "class_features": {
+        "hit_points": {
+            "hit_dice": 10,
+            "average_per_level": 6
+        },
+        "proficiencies": {
+            "armor": ["all", "shields"],
+            "weapons": ["simple", "martial"],
+            "tools": [],
+            "savingThrows": ["wisdom", "charisma"],
+            "skills": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"],
+            "skillsChoose": 2,
+            "hasSpellcasting": true,
+            "hasRage": false,
+            "hasKi": false,
+            "hasSneakAttack": false,
+            "hasSorceryPoints": false,
+            "hasInvocations": false
+        },
+        "equipment": {
+            "items": [
+                {"choices": ["a martial weapon and a shield", "two martial weapons"]},
+                {"choices": ["five javelins", "any simple melee weapon"]},
+                {"choices": ["priest’s pack", "explorer’s pack"]},
+                {"fixed": ["chain mail", "holy symbol"]}
+            ]
+        }
+    },
+    "progression": [
+        {"lv": 1, "features": ["Divine Sense", "Lay on Hands"]},
+        {"lv": 2, "features": ["Fighting Style", "Spellcasting", "Divine Smite"]},
+        {"lv": 3, "features": ["Divine Health", "Sacred Oath"]},
+        {"lv": 4, "features": ["Ability Score Improvement"]},
+        {"lv": 5, "features": ["Extra Attack"]},
+        {"lv": 6, "features": ["Aura of Protection"]},
+        {"lv": 7, "features": ["Sacred Oath feature"]},
+        {"lv": 8, "features": ["Ability Score Improvement"]},
+        {"lv": 9, "features": ["-"]},
+        {"lv": 10, "features": ["Aura of Courage"]},
+        {"lv": 11, "features": ["Improved Divine Smite"]},
+        {"lv": 12, "features": ["Ability Score Improvement"]},
+        {"lv": 13, "features": ["-"]},
+        {"lv": 14, "features": ["Cleansing Touch"]},
+        {"lv": 15, "features": ["Sacred Oath feature"]},
+        {"lv": 16, "features": ["Ability Score Improvement"]},
+        {"lv": 17, "features": ["-"]},
+        {"lv": 18, "features": ["Aura improvements"]},
+        {"lv": 19, "features": ["Ability Score Improvement"]},
+        {"lv": 20, "features": ["Sacred Oath feature"]}
+    ]
+}
