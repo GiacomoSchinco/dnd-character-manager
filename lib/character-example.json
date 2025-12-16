@@ -1,0 +1,34 @@
+{
+  "name": "Thorin",
+  "race": "Dwarf",
+  "subrace": "Hill Dwarf",
+  "class": "Fighter",
+  "level": 1,
+  "experience": 0,
+  "stats": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 8
+  },
+  "speed": 8,
+  "size": "Medium",
+  "darkvision": 18,
+  "languages": ["Common", "Dwarvish"],
+  "resistances": ["poison"],
+  "immunities": [],
+  "advantage": [],
+  "proficiencies": ["battleaxe", "handaxe", "light hammer", "warhammer"],
+  "tools": ["smith's tools"],
+  "features": [
+    { "name": "dwarven resilience", "type": "passive", "effect": "advantage on saving throws against poison, resistance to poison damage" },
+    { "name": "stonecunning", "type": "passive", "effect": "double proficiency bonus on History checks related to stonework" }
+  ],
+  "extraLanguage": 0,
+  "extraSkills": 0,
+  "hpPerLevel": 1,
+  "subraceFeatures": [],
+  "classFeatures": []
+}

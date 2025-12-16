@@ -1,0 +1,242 @@
+{
+  "Dwarf": {
+    "abilityScoreIncrease": { "CON": 2 },
+    "speed": 8,
+    "size": "Medium",
+    "darkvision": 18,
+    "resistances": ["poison"],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": ["battleaxe", "handaxe", "light hammer", "warhammer"],
+    "tools": ["smith's tools", "brewer's supplies", "mason's tools"],
+    "languages": ["Common", "Dwarvish"],
+    "features": [
+      {"name": "dwarven resilience", "type": "passive", "effect": "advantage on saving throws against poison, resistance to poison damage"},
+      {"name": "stonecunning", "type": "passive", "effect": "double proficiency bonus on History checks related to stonework"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {
+      "Hill Dwarf": {
+        "abilityScoreIncrease": { "WIS": 1 },
+        "resistances": [],
+        "immunities": [],
+        "advantage": [],
+        "proficiencies": [],
+        "tools": [],
+        "languages": [],
+        "features": [],
+        "extraLanguage": 0,
+        "extraSkills": 0,
+        "hpPerLevel": 1
+      }
+    }
+  },
+  "Elf": {
+    "abilityScoreIncrease": { "DEX": 2 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": 18,
+    "resistances": [],
+    "immunities": ["sleep"],
+    "advantage": ["charmed"],
+    "proficiencies": ["Perception"],
+    "tools": [],
+    "languages": ["Common", "Elvish"],
+    "features": [
+      {"name": "fey ancestry", "type": "passive", "effect": "advantage on saving throws against being charmed, magic can't put you to sleep"},
+      {"name": "trance", "type": "passive", "effect": "does not need to sleep, meditates 4 hours"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {
+      "High Elf": {
+        "abilityScoreIncrease": { "INT": 1 },
+        "resistances": [],
+        "immunities": [],
+        "advantage": [],
+        "proficiencies": ["longsword", "shortsword", "shortbow", "longbow"],
+        "tools": [],
+        "languages": [],
+        "features": [
+          {"name": "cantrip", "type": "active", "effect": "knows one cantrip from wizard list"}
+        ],
+        "extraLanguage": 1,
+        "extraSkills": 0,
+        "hpPerLevel": 0
+      }
+    }
+  },
+  "Halfling": {
+    "abilityScoreIncrease": { "DEX": 2 },
+    "speed": 8,
+    "size": "Small",
+    "darkvision": null,
+    "resistances": [],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common", "Halfling"],
+    "features": [
+      {"name": "lucky", "type": "passive", "effect": "reroll 1 on d20 for attack, ability, or save"},
+      {"name": "brave", "type": "passive", "effect": "advantage on saving throws against being frightened"},
+      {"name": "halfling nimbleness", "type": "passive", "effect": "can move through space of larger creatures"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {
+      "Lightfoot": {
+        "abilityScoreIncrease": { "CHA": 1 },
+        "darkvision": null,
+        "resistances": [],
+        "immunities": [],
+        "advantage": [],
+        "proficiencies": [],
+        "tools": [],
+        "languages": [],
+        "features": [
+          {"name": "naturally stealthy", "type": "passive", "effect": "can attempt to hide when obscured by a creature at least one size larger"}
+        ],
+        "extraLanguage": 0,
+        "extraSkills": 0,
+        "hpPerLevel": 0
+      }
+    }
+  },
+  "Human": {
+    "abilityScoreIncrease": { "ALL": 1 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": null,
+    "resistances": [],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common"],
+    "features": [],
+    "extraLanguage": 1,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {}
+  },
+  "Dragonborn": {
+    "abilityScoreIncrease": { "STR": 2, "CHA": 1 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": null,
+    "resistances": [],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common", "Draconic"],
+    "features": [
+      {"name": "breath weapon", "type": "active", "effect": "exhale destructive energy, type and shape based on ancestry"},
+      {"name": "damage resistance", "type": "passive", "effect": "resistance to damage type based on ancestry"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {}
+  },
+  "Gnome": {
+    "abilityScoreIncrease": { "INT": 2 },
+    "speed": 8,
+    "size": "Small",
+    "darkvision": 18,
+    "resistances": [],
+    "immunities": [],
+    "advantage": ["magic saves"],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common", "Gnomish"],
+    "features": [
+      {"name": "gnome cunning", "type": "passive", "effect": "advantage on all Intelligence, Wisdom, and Charisma saving throws against magic"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {
+      "Rock Gnome": {
+        "abilityScoreIncrease": { "CON": 1 },
+        "darkvision": null,
+        "resistances": [],
+        "immunities": [],
+        "advantage": [],
+        "proficiencies": [],
+        "tools": [],
+        "languages": [],
+        "features": [
+          {"name": "artificer's lore", "type": "passive", "effect": "double proficiency on History checks related to magic items, alchemical objects, or technological devices"},
+          {"name": "tinker", "type": "active", "effect": "can build tiny clockwork devices"}
+        ],
+        "extraLanguage": 0,
+        "extraSkills": 0,
+        "hpPerLevel": 0
+      }
+    }
+  },
+  "Half-Elf": {
+    "abilityScoreIncrease": { "CHA": 2, "ANY": 2 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": 18,
+    "resistances": [],
+    "immunities": ["sleep"],
+    "advantage": ["charmed"],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common", "Elvish"],
+    "features": [
+      {"name": "skill versatility", "type": "passive", "effect": "proficiency in two skills of your choice"}
+    ],
+    "extraLanguage": 1,
+    "extraSkills": 2,
+    "hpPerLevel": 0,
+    "subraces": {}
+  },
+  "Half-Orc": {
+    "abilityScoreIncrease": { "STR": 2, "CON": 1 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": 18,
+    "resistances": [],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": ["Intimidation"],
+    "tools": [],
+    "languages": ["Common", "Orc"],
+    "features": [
+      {"name": "relentless endurance", "type": "passive", "effect": "when reduced to 0 hp but not killed outright, drop to 1 hp instead (once per long rest)"},
+      {"name": "savage attacks", "type": "passive", "effect": "on critical hit with melee weapon, roll one extra damage die"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {}
+  },
+  "Tiefling": {
+    "abilityScoreIncrease": { "INT": 1, "CHA": 2 },
+    "speed": 9,
+    "size": "Medium",
+    "darkvision": 18,
+    "resistances": ["fire"],
+    "immunities": [],
+    "advantage": [],
+    "proficiencies": [],
+    "tools": [],
+    "languages": ["Common", "Infernal"],
+    "features": [
+      {"name": "infernal legacy", "type": "active", "effect": "thaumaturgy cantrip, hellish rebuke (3rd), darkness (5th), Charisma as spellcasting ability"}
+    ],
+    "extraLanguage": 0,
+    "extraSkills": 0,
+    "hpPerLevel": 0,
+    "subraces": {}
+  }
+}
