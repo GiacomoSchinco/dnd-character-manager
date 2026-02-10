@@ -1,5 +1,5 @@
 {
-  "Barbarian": {"rageProgression": [
+    "Barbarian": {"rageProgression": [
                                     {"lv": 1, "rages": 2, "rageDamage": "+2"},
                                     {"lv": 2, "rages": 2, "rageDamage": "+2"},
                                     {"lv": 3, "rages": 3, "rageDamage": "+2"},
@@ -21,7 +21,7 @@
                                     {"lv": 19, "rages": 6, "rageDamage": "+4"},
                                     {"lv": 20, "rages": "Unlimited", "rageDamage": "+4"}
                                 ]},
-  "Bard":                                 {"spellcastingProgression": [
+    "Bard": {"spellcastingProgression": [
                                     {"lv": 1, "cantripsKnown": 4, "spellsKnown": 2, "spellSlots": {"1st": 2} },
                                     {"lv": 2, "cantripsKnown": 5, "spellsKnown": 2, "spellSlots": {"1st": 3} },
                                     {"lv": 3, "cantripsKnown": 6, "spellsKnown": 2, "spellSlots": {"1st": 4, "2nd": 2} },
@@ -43,7 +43,7 @@
                                     {"lv": 19, "cantripsKnown": 22, "spellsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 1, "8th": 1, "9th": 1} },
                                     {"lv": 20, "cantripsKnown": 22, "spellsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 2, "8th": 1, "9th": 1} }
                                 ]},
-  "Cleric": {"spellcastingProgression": [
+    "Cleric": {"spellcastingProgression": [
                         {"lv": 1, "cantripsKnown": 3, "spellSlots": {"1st": 2}},
                         {"lv": 2, "cantripsKnown": 3, "spellSlots": {"1st": 3}},
                         {"lv": 3, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 2}},
@@ -66,7 +66,7 @@
                         {"lv": 20, "cantripsKnown": 5, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 2, "8th": 1, "9th": 1}}
                     ]
                     },
-  "Druid":{"spellcastingProgression": [
+    "Druid":{"spellcastingProgression": [
                     {"lv": 1, "cantripsKnown": 2, "spellSlots": {"1st": 2}},
                     {"lv": 2, "cantripsKnown": 2, "spellSlots": {"1st": 3}},
                     {"lv": 3, "cantripsKnown": 2, "spellSlots": {"1st": 4, "2nd": 2}},
@@ -88,8 +88,8 @@
                     {"lv": 19, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 1, "8th": 1, "9th": 1}},
                     {"lv": 20, "cantripsKnown": 4, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 2, "6th": 2, "7th": 2, "8th": 1, "9th": 1}}
                 ]},
-  "Fighter": {},
-  "Monk": {                "kiProgression": [
+    "Fighter": {},
+    "Monk": {"kiProgression": [
                     {"lv": 1, "die": "1d4", "kiPoints": 0, "bonus": 0},
                     {"lv": 2, "die": "1d4", "kiPoints": 2, "bonus": 10},
                     {"lv": 3, "die": "1d4", "kiPoints": 3, "bonus": 10},
@@ -111,7 +111,7 @@
                     {"lv": 19, "die": "1d10", "kiPoints": 19, "bonus": 30},
                     {"lv": 20, "die": "1d10", "kiPoints": 20, "bonus": 30}
                 ]},
-  "Paladin": {"spellcastingProgression": [
+    "Paladin": {"spellcastingProgression": [
                     {"lv": 1, "spellSlots": {}},
                     {"lv": 2, "spellSlots": {"1st": 2}},
                     {"lv": 3, "spellSlots": {"1st": 3}},
@@ -133,7 +133,7 @@
                     {"lv": 19, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
                     {"lv": 20, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}}
                 ]},
-  "Ranger":{"spellcastingProgression": [
+    "Ranger":{"spellcastingProgression": [
                     {"lv": 1, "spellsKnown": 0, "spellSlots": {}},
                     {"lv": 2, "spellsKnown": 2, "spellSlots": {"1st": 2}},
                     {"lv": 3, "spellsKnown": 3, "spellSlots": {"1st": 3}},
@@ -155,7 +155,7 @@
                     {"lv": 19, "spellsKnown": 11, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}},
                     {"lv": 20, "spellsKnown": 11, "spellSlots": {"1st": 4, "2nd": 3, "3rd": 3, "4th": 3, "5th": 1}}
                 ]},
-  "Rogue":{"sneakAttackProgression": [
+    "Rogue":{"sneakAttackProgression": [
         {"lv": 1, "dice": "1d6"},
         {"lv": 2, "dice": "1d6"},
         {"lv": 3, "dice": "2d6"},
@@ -177,7 +177,7 @@
         {"lv": 19, "dice": "10d6"},
         {"lv": 20, "dice": "10d6"}
       ]},
-  "Sorcerer": {"spellcastingProgression": [
+    "Sorcerer": {"spellcastingProgression": [
                     {"lv": 1, "cantripsKnown": 4, "spellsKnown": 2, "spellSlots": {"1st": 2}},
                     {"lv": 2, "cantripsKnown": 4, "spellsKnown": 3, "spellSlots": {"1st": 3}},
                     {"lv": 3, "cantripsKnown": 4, "spellsKnown": 4, "spellSlots": {"1st": 4, "2nd": 2}},
@@ -221,7 +221,7 @@
                     {"lv": 19, "sorceryPoints": 19},
                     {"lv": 20, "sorceryPoints": 20}
                 ]},
-  "Warlock": {"spellcastingProgression": [
+    "Warlock": {"spellcastingProgression": [
                     {"lv": 1, "cantripsKnown": 2, "spellsKnown": 2, "spellSlots": 1, "slotLevel": "1st"},
                     {"lv": 2, "cantripsKnown": 2, "spellsKnown": 3, "spellSlots": 2, "slotLevel": "1st"},
                     {"lv": 3, "cantripsKnown": 2, "spellsKnown": 4, "spellSlots": 2, "slotLevel": "2nd"},
@@ -265,7 +265,7 @@
                     {"lv": 19, "invocationsKnown": 8},
                     {"lv": 20, "invocationsKnown": 8}
                 ]},
-  "Wizard": {"spellcastingProgression": [
+    "Wizard": {"spellcastingProgression": [
                     {"lv": 1, "cantripsKnown": 3, "spellSlots": {"1st": 2}},
                     {"lv": 2, "cantripsKnown": 3, "spellSlots": {"1st": 3}},
                     {"lv": 3, "cantripsKnown": 3, "spellSlots": {"1st": 4, "2nd": 2}},
