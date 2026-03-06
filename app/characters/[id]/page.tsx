@@ -84,11 +84,12 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         {/* Immagine  e nome del Personaggio*/}
         <div className="card lg:card-side bg-amber-50 shadow-sm mb-4">
           <figure className="w-48 mx-auto lg:mx-0 overflow-hidden"> {/* centro su mobile */}
-                <img
-                    src={character.image}
-                    alt={character.name}
-                    className="w-full h-full object-cover"
-                />
+            <Image
+              src={character.image}
+              alt={character.name}
+              width={400}
+              height={400}
+            />
           </figure>
           <div className="card-body">
             {/* Nome e Livello*/}
@@ -170,7 +171,7 @@ export default async function Character({ params }: { params: Promise<{ id: stri
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <div className="card card-border bg-amber-50">
           <div className="card-body">
-            <h3 className="card-title text-lg mb-2">Proficienze</h3>
+            <h3 className="card-title text-lg mb-2">Competenze</h3>
             <DataTable
               initialData={proficiencies}
               visibleColumns={["categoria", "elemento"]}

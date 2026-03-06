@@ -4,19 +4,26 @@ import { classes } from "@/lib/dictionaries/classes";
 import { alignments } from "@/lib/dictionaries/alignments";
 import { t } from "@/lib/dictionary";
 
+interface Character {
+  name: string;
+  race: string;
+  class: string;
+  background: string;
+  alignment: string;
+}
+
 export default function CharacterWizardModal({ open, onClose, onCreate }: {
   open: boolean;
   onClose: () => void;
-  onCreate: (character: any) => void;
+  onCreate: (character: Character) => void;
 }) {
   const [step, setStep] = useState(0);
-  const [character, setCharacter] = useState({
+  const [character, setCharacter] = useState<Character>({
     name: "",
     race: "",
     class: "",
     background: "",
     alignment: "",
-    // aggiungi altri campi necessari
   });
 
   const steps = [

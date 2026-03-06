@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import HpBar from "./HpBar";
 type Character = {
     id: number;
@@ -23,10 +24,12 @@ export default function CardCharacter({ character }: Props) {
 
             {/* Immagine */}
             <figure className="relative">
-                <img
+                <Image
                     src={character.image}
                     alt={character.name}
                     className="w-full h-48 object-cover"
+                    width={400}
+                    height={400}
                 />
                 <div className="absolute bottom-0 left-0 bg-primary/70 text-primary-content px-3 py-1 text-sm rounded-tr-xl">
                     Livello {character.level}
