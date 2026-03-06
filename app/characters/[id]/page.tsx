@@ -1,3 +1,4 @@
+import Image from "next/image";
 import StatDiamond from "@/components/ui/StatDiamond";
 import SkillsDisplay from "@/components/ui/SkillsDisplay";
 import { skills, SkillKey } from "@/lib/dictionaries/skills";
@@ -83,11 +84,11 @@ export default async function Character({ params }: { params: Promise<{ id: stri
         {/* Immagine  e nome del Personaggio*/}
         <div className="card lg:card-side bg-amber-50 shadow-sm mb-4">
           <figure className="w-48 mx-auto lg:mx-0 overflow-hidden"> {/* centro su mobile */}
-            <img
-              src={character.image}
-              alt="Movie"
-              className="object-cover rounded-xl w-full h-full" // proporzioni e angoli arrotondati uniformi
-            />
+                <img
+                    src={character.image}
+                    alt={character.name}
+                    className="w-full h-full object-cover"
+                />
           </figure>
           <div className="card-body">
             {/* Nome e Livello*/}

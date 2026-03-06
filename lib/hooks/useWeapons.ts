@@ -1,17 +1,31 @@
 import { useQuery } from "@tanstack/react-query";
 
+export interface WeaponProperty {
+  property: {
+    name: string;
+    type: string | null;
+    url: string;
+    desc: string;
+  };
+  detail: string | null;
+}
+
+export interface DamageType {
+  name: string;
+  key: string;
+  url: string;
+}
+
 export interface Open5eWeapon {
   name: string;
-  category?: string;
-  cost?: string;
   damage_dice?: string;
-  damage_type?: string;
-  weight?: string;
-  properties?: string[];
-  desc?: string;
-  slug?: string;
-  document__slug?: string;
-  document__title?: string;
+  damage_type?: DamageType;
+  properties?: WeaponProperty[];
+  range?: number;
+  long_range?: number;
+  is_simple: boolean;
+  is_improvised: boolean;
+  distance_unit?: string;
 }
 
 export interface WeaponsResponse {
@@ -29,7 +43,7 @@ async function fetchWeapons(): Promise<WeaponsResponse> {
 
 export function useWeapons() {
   return useQuery({
-    queryKey: ["open5e", "weapons"],
+    queryKey: ["weapons"],
     queryFn: fetchWeapons,
     staleTime: 1000 * 60 * 5,
   });

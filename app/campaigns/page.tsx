@@ -1,8 +1,8 @@
-import { Loading } from "@/components/ui";
+import WorkInProgress from "../work-in-progress";
 export default function     Campaigns       () {    
     return (
         <>
-            <Loading/>
+            <WorkInProgress/>
         </>
     );
 }

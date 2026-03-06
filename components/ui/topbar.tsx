@@ -6,6 +6,7 @@ import Login from "./Login";
 const navLinks = [
     { href: "/characters", label: "Personaggi" },
     { href: "/campaigns", label: "Campagna" },
+    { href: "/weapons", label: "Armi" },
 ];
 
 export default function Topbar() {
