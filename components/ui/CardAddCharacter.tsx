@@ -1,13 +1,24 @@
+// components/CardAddCharacter.tsx
 import React from "react";
+import AncientCardContainer from "./AncientCardContainer";
 
-export default function CardAddCharacter({ onClick }: { onClick?: () => void }) {
+interface CardAddCharacterProps {
+  onClick?: () => void;
+}
+
+export default function CardAddCharacter({ onClick }: CardAddCharacterProps) {
   return (
-     <div className="card w-full max-w-xs shadow-xl border border-primary/30 hover:shadow-2xl transition-all duration-300" onClick={onClick}>
-
-      <div className="flex flex-col items-center justify-center h-full w-full">
-        <span className="text-6xl text-primary font-bold select-none">+</span>
-        <span className="mt-2 text-sm text-base-content opacity-70">Nuovo personaggio</span>
+    <AncientCardContainer
+      onClick={onClick}
+      isDashed
+      variant="add"
+      className="w-72 h-96 cursor-pointer transform-gpu hover:scale-105 transition-all duration-300"
+    >
+      <div className="relative h-full flex flex-col items-center justify-center">
+        <span className="text-8xl text-amber-800/70 font-serif select-none mb-4">+</span>
+        <span className="text-lg font-serif text-amber-900">Nuovo personaggio</span>
+        <span className="text-sm text-amber-700 italic mt-2">Clicca per creare</span>
       </div>
-    </div>
+    </AncientCardContainer>
   );
 }
