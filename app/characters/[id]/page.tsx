@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AncientScroll from "@/components/ui/AncientScroll";
 import StatDiamond from "@/components/ui/StatDiamond";
 import SkillsDisplay from "@/components/ui/SkillsDisplay";
 import { skills, SkillKey } from "@/lib/dictionaries/skills";
@@ -9,6 +10,7 @@ import { CombatStat } from "@/components/ui";
 import { IconShield } from "@/components/ui";
 import { notFound } from "next/navigation";
 import { currencyLabels, currencyOrder } from "@/lib/dictionaries/currency";
+import AncientCardContainer from "@/components/ui/AncientCardContainer";
 
 
 export default async function Character({ params }: { params: Promise<{ id: string }> }) {
@@ -80,6 +82,41 @@ export default async function Character({ params }: { params: Promise<{ id: stri
   ];
   return (
     <>
+      <AncientScroll className="mb-4">
+        <h1 className="text-4xl font-serif text-amber-900 mb-2 text-center">
+          Scheda del Personaggio
+        </h1>
+        <p className="text-center text-amber-700 italic">
+          &ldquo;Ogni eroe ha una storia...&rdquo;
+        </p>
+      </AncientScroll>
+      <AncientCardContainer haveMargin>
+        {/* Nome e Livello*/}
+        <h2 className="card-title text-primary">
+          {character.name} - Livello {character.level}
+        </h2>
+        {/* Razza + Classe */}
+        <p className="text-sm text-accent-content">
+          {character.race} • {character.class}
+        </p>
+        <HpBar current={character.hp} max={character.maxhp} size="large" />
+        {/* Background + Allineamento */}
+        <p className="text-xs opacity-70">
+          <strong>Background:</strong> {character.background}
+        </p>
+        <p className="text-xs opacity-70">
+          <strong>Allineamento:</strong> {character.alignment}
+        </p>
+        <div className="divider" />
+        {/* Statistiche di Combattimento */}
+        <div className="flex flex-row gap-4">
+          <CombatStat label="CA" value={ac} variant="large" />
+          <CombatStat label="Iniziativa" value={initiative} variant="large" />
+          <CombatStat label="Velocità" value={speed} variant="large" />
+          <CombatStat label="Ispirazione" value={inspiration ? "✓" : "-"} variant="large" />
+          <CombatStat label="Competenza" value={proficiencyBonus} variant="large" />
+        </div>
+      </AncientCardContainer>
       <div className="max-w-full">
         {/* Immagine  e nome del Personaggio*/}
         <div className="card lg:card-side bg-amber-50 shadow-sm mb-4">
@@ -92,31 +129,6 @@ export default async function Character({ params }: { params: Promise<{ id: stri
             />
           </figure>
           <div className="card-body">
-            {/* Nome e Livello*/}
-            <h2 className="card-title text-primary">
-              {character.name} - Livello {character.level}
-            </h2>
-            {/* Razza + Classe */}
-            <p className="text-sm text-accent-content">
-              {character.race} • {character.class}
-            </p>
-            <HpBar current={character.hp} max={character.maxhp} size="large" />
-            {/* Background + Allineamento */}
-            <p className="text-xs opacity-70">
-              <strong>Background:</strong> {character.background}
-            </p>
-            <p className="text-xs opacity-70">
-              <strong>Allineamento:</strong> {character.alignment}
-            </p>
-            <div className="divider"/>
-            {/* Statistiche di Combattimento */}
-            <div className="flex flex-row gap-4">
-              <CombatStat label="CA" value={ac} icon={<IconShield />} />
-              <CombatStat label="Iniziativa" value={initiative} />
-              <CombatStat label="Velocità" value={speed} />
-              <CombatStat label="Ispirazione" value={inspiration ? "✓" : "-"} />
-              <CombatStat label="Competenza" value={proficiencyBonus} />
-            </div>
 
           </div>
         </div>

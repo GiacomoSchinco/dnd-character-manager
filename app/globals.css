@@ -2,3 +2,23 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
+
+/* Animazioni globali usate dalle pagine */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-18px) rotate(-2deg); }
+  50% { transform: translateY(-35px) rotate(3deg); }
+  75% { transform: translateY(-18px) rotate(-1deg); }
+ 100% { transform: translateY(0px) rotate(0deg); }
+}
+.animate-float {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}

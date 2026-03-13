@@ -6,6 +6,7 @@ interface AncientCardContainerProps {
   onClick?: () => void;
   className?: string;
   isDashed?: boolean;
+  haveMargin?: boolean;
   variant?: 'default' | 'add' | 'flipped';
 }
 
@@ -14,6 +15,7 @@ const AncientCardContainer: React.FC<AncientCardContainerProps> = ({
   onClick,
   className = '',
   isDashed = false,
+  haveMargin = false,
   variant = 'default',
 }) => {
   const variantStyles = {
@@ -25,7 +27,7 @@ const AncientCardContainer: React.FC<AncientCardContainerProps> = ({
   const { bg, border } = variantStyles[variant];
 
   return (
-    <div className={`relative ${className}`} onClick={onClick}>
+    <div className={className} onClick={onClick}>
       <div className={`relative w-full h-full ${bg} rounded-xl overflow-hidden border-8 shadow-2xl ${border}`}>
 
         {/* Texture pergamena */}
@@ -58,7 +60,7 @@ const AncientCardContainer: React.FC<AncientCardContainerProps> = ({
         <div className="absolute bottom-4 right-4 text-3xl text-amber-800/20 pointer-events-none">♦</div>
 
         {/* Contenuto */}
-        <div className="relative h-full w-full">
+        <div className={`relative h-full w-full ${haveMargin ? 'p-10' : ''}`}>
           {children}
         </div>
       </div>
