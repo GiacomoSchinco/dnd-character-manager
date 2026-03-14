@@ -1,71 +1,28 @@
 "use client";
 
-/**
- * CrudTable — componente tabellare generico (Next.js + TanStack v8 + daisyUI)
- *
- * Come funziona (in breve):
- * - Genera automaticamente le colonne dalle chiavi del primo elemento di `initialData`.
- * - Nasconde la colonna identificativa (`idKey`, default "id").
- * - Azioni: la colonna "Azioni" compare solo se fornisci almeno una callback tra `onEdit` e `onDelete`;
- *   i bottoni chiamano le callback con `(id, row)` e fermano la propagazione del click sulla riga.
- * - Click riga: se passi `onRowClick`, la riga è cliccabile e richiama `(id, row)`.
- * - Colonne: alias (`labels`) e selezione/ordine (`visibleColumns`). Se `visibleColumns` è presente, ha precedenza su `hiddenColumns`.
- * - Stato: nessun modal o form interni (azione demandata al consumer). I dati interni si sincronizzano quando `initialData` cambia.
- *
- * Props principali:
- * - initialData: T[]                        | Dati da mostrare.
- * - idKey?: keyof T (default: "id")         | Chiave primaria usata per passare l'id nelle callback.
- * - visibleColumns?: (keyof T)[]            | Se presente, mostra SOLO queste colonne (nell'ordine dato).
- * - hiddenColumns?: (keyof T)[]             | Colonne da nascondere (oltre a idKey).
- * - readOnlyColumns?: (keyof T)[]           | Marcatura informativa (non ci sono editor interni).
- * - labels?: Record<keyof T, string>        | Mappa chiave -> intestazione visibile.
- * - onEdit?: (id: any, row: T) => void      | Callback per click su "Modifica" (se definita, compare il bottone).
- * - onDelete?: (id: any, row: T) => void    | Callback per click su "Elimina" (se definita, compare il bottone).
- * - onRowClick?: (id: any, row: T) => void  | Callback al click sulla riga (attiva hover e cursore puntatore).
- *
- * Esempi d'uso:
- *
- * // Solo visualizzazione (nessuna azione)
- * <CrudTable initialData={data} visibleColumns={["name","class","level"]} />
- *
- * // Con azioni esterne: stampa in console gli ID
- * <CrudTable
- *   initialData={data}
- *   visibleColumns={["name","class","level"]}
- *   labels={{ name: "Nome", class: "Classe", level: "Livello" }}
- *   onEdit={(id, row) => console.log("Edit", id, row)}
- *   onDelete={(id) => console.log("Delete", id)}
- * />
- *
- * // Click sulla riga
- * <CrudTable initialData={data} onRowClick={(id, row) => console.log("Row", id, row)} />
- *
- * // Chiave primaria personalizzata (es. "uuid")
- * <CrudTable initialData={data} idKey="uuid" onEdit={...} />
- */
-
 import React, { useEffect, useMemo, useState } from "react";
+import AncientCardContainer from "./AncientCardContainer";
 import {
     getCoreRowModel,
     useReactTable,
     ColumnDef,
     flexRender,
 } from "@tanstack/react-table";
-import { on } from "events";
 
 type AnyRecord = Record<string, any>;
 
 export type DataTableProps<T extends AnyRecord> = {
     initialData: T[];
-    idKey?: keyof T & string; // chiave primaria (default: "id")
+    idKey?: keyof T & string;
     hiddenColumns?: Array<keyof T & string>;
     readOnlyColumns?: Array<keyof T & string>;
     labels?: Partial<Record<keyof T & string, string>>;
-    visibleColumns?: Array<keyof T & string>; // se presente, usa solo queste colonne (in questo ordine)
-    onEdit?: (id: any, row: T) => void; // callback esterna per modifica
-    onDelete?: (id: any, row: T) => void; // callback esterna per eliminazione
-    onRowClick?: (id: any, row: T) => void; // click sulla riga
-    pagination?: boolean; // se true, attiva la paginazione client-side
+    visibleColumns?: Array<keyof T & string>;
+    onEdit?: (id: any, row: T) => void;
+    onDelete?: (id: any, row: T) => void;
+    onRowClick?: (id: any, row: T) => void;
+    pagination?: boolean;
+    title?: string;
 };
 
 function toLabel(key: string) {
@@ -75,28 +32,30 @@ function toLabel(key: string) {
         .replace(/^\w/, (c) => c.toUpperCase());
 }
 
-export default function DataTable<T extends AnyRecord>(
-    {
-        initialData,
-        idKey = "id" as keyof T & string,
-        hiddenColumns = [],
-        readOnlyColumns = [],
-        labels = {},
-        visibleColumns,
-        onEdit,
-        onDelete,
-        onRowClick,
-        pagination = false,
-    }: DataTableProps<T>
-) {
+export default function DataTable<T extends AnyRecord>({
+    initialData,
+    idKey = "id" as keyof T & string,
+    hiddenColumns = [],
+    readOnlyColumns = [],
+    labels = {},
+    visibleColumns,
+    onEdit,
+    onDelete,
+    onRowClick,
+    pagination = false,
+    title,
+}: DataTableProps<T>) {
     const [data, setData] = useState<T[]>(initialData);
     useEffect(() => {
         setData(initialData);
     }, [initialData]);
-    const first = data[0] ?? initialData[0] ?? ({} as T);
-    const keys = useMemo(() => Object.keys(first) as Array<keyof T & string>, [first]);
 
-    // PAGINAZIONE CLIENT (solo se pagination === true)
+    const keys = useMemo(() => {
+        const first = data[0] ?? initialData[0] ?? ({} as T);
+        return Object.keys(first) as Array<keyof T & string>;
+    }, [data, initialData]);
+
+    // Paginazione
     const [page, setPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const totalRows = data.length;
@@ -106,9 +65,12 @@ export default function DataTable<T extends AnyRecord>(
         const start = (page - 1) * rowsPerPage;
         return data.slice(start, start + rowsPerPage);
     }, [data, page, rowsPerPage, pagination]);
+
     useEffect(() => {
         if (pagination && page > totalPages) setPage(totalPages);
     }, [totalPages, page, pagination]);
+
+    
     const visibleKeys = useMemo(() => {
         const idStr = idKey as string;
         if (visibleColumns && visibleColumns.length) {
@@ -117,53 +79,50 @@ export default function DataTable<T extends AnyRecord>(
         }
         return keys.filter((k) => k !== idStr && !(hiddenColumns as string[]).includes(k));
     }, [keys, idKey, hiddenColumns, visibleColumns]);
-    const editableKeys = useMemo(
-        () => visibleKeys.filter((k) => k !== (idKey as string) && !(readOnlyColumns as string[]).includes(k)),
-        [visibleKeys, idKey, readOnlyColumns]
-    );
 
-    const columns = useMemo<ColumnDef<T, any>[]>(
-        () => {
-            const baseCols: ColumnDef<T, any>[] = visibleKeys.map((key) => ({
-                accessorKey: key,
-                header: labels[key] ?? toLabel(key),
-                cell: (info: any) => {
-                    const v = info.getValue() as any;
-                    return typeof v === "boolean" ? (v ? "✓" : "✗") : String(v ?? "");
-                },
-            }));
+    const columns = useMemo<ColumnDef<T, any>[]>(() => {
+        const baseCols: ColumnDef<T, any>[] = visibleKeys.map((key) => ({
+            accessorKey: key,
+            header: labels[key] ?? toLabel(key),
+            cell: (info: any) => {
+                const v = info.getValue() as any;
+                return typeof v === "boolean" ? (v ? "✓" : "✗") : String(v ?? "");
+            },
+        }));
 
-            if (onEdit || onDelete) {
-                baseCols.push({
-                    id: "actions",
-                    header: "Azioni",
-                    cell: ({ row }) => (
-                        <div className="flex gap-2">
-                            {onEdit && (
-                                <button
-                                    className="btn btn-xs btn-outline"
-                                    onClick={(e) => { e.stopPropagation(); onEdit((row.original as any)[idKey], row.original); }}
-                                >
-                                    Modifica
-                                </button>
-                            )}
-                            {onDelete && idKey && (
-                                <button
-                                    className="btn btn-xs btn-error text-white"
-                                    onClick={(e) => { e.stopPropagation(); onDelete((row.original as any)[idKey], row.original); }}
-                                >
-                                    Elimina
-                                </button>
-                            )}
-                        </div>
-                    ),
-                });
-            }
+        if (onEdit || onDelete) {
+            baseCols.push({
+                id: "actions",
+                header: "Azioni",
+                cell: ({ row }) => (
+                    <div className="flex gap-2">
+                        {onEdit && (
+                            <button
+                                className="relative px-3 py-1 text-xs font-serif text-amber-100 bg-amber-700 rounded-sm border border-amber-600 hover:bg-amber-800 transition-colors duration-200 shadow-md"
+                                onClick={(e) => { e.stopPropagation(); onEdit((row.original as any)[idKey], row.original); }}
+                            >
+                                <span className="flex items-center gap-1">
+                                    <span className="text-amber-300">📜</span> Modifica
+                                </span>
+                            </button>
+                        )}
+                        {onDelete && idKey && (
+                            <button
+                                className="relative px-3 py-1 text-xs font-serif text-amber-100 bg-amber-800 rounded-sm border border-amber-700 hover:bg-amber-900 transition-colors duration-200 shadow-md"
+                                onClick={(e) => { e.stopPropagation(); onDelete((row.original as any)[idKey], row.original); }}
+                            >
+                                <span className="flex items-center gap-1">
+                                    <span className="text-amber-300">🗡️</span> Elimina
+                                </span>
+                            </button>
+                        )}
+                    </div>
+                ),
+            });
+        }
 
-            return baseCols;
-        },
-        [visibleKeys, labels, idKey, onEdit, onDelete]
-    );
+        return baseCols;
+    }, [visibleKeys, labels, idKey, onEdit, onDelete]);
 
     const table = useReactTable<T>({
         data: paginatedData,
@@ -172,84 +131,138 @@ export default function DataTable<T extends AnyRecord>(
     });
 
     return (
-        <div className="p-6">
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    <thead>
-                        {table.getHeaderGroups().map((headerGroup) => (
-                            <tr key={headerGroup.id}>
-                                {headerGroup.headers.map((header) => (
-                                    <th key={header.id}>
-                                        {header.isPlaceholder
-                                            ? null
-                                            : flexRender(header.column.columnDef.header, header.getContext())}
-                                    </th>
+        <div className="w-full p-4">
+            <AncientCardContainer className="w-full" variant="transparent" >
+                <div className="relative z-10 p-6">
+                    {/* Titolo con decorazioni */}
+                    {title && (
+                        <div className="mb-6 text-center">
+                            <div className="flex items-center justify-center gap-4 mb-2">
+                                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-amber-700 to-transparent" />
+                                <h2 className="text-3xl font-serif text-amber-900 tracking-wide">{title}</h2>
+                                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-amber-700 to-transparent" />
+                            </div>
+                        </div>
+                    )}
+
+                    <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                            <thead>
+                                {table.getHeaderGroups().map((headerGroup) => (
+                                    <tr key={headerGroup.id} className="border-b-2 border-amber-800/50">
+                                        {headerGroup.headers.map((header) => (
+                                            <th key={header.id} className="px-4 py-3 text-left">
+                                                <span className="font-serif text-amber-900 font-bold text-sm uppercase tracking-wider">
+                                                    {header.isPlaceholder
+                                                        ? null
+                                                        : flexRender(header.column.columnDef.header, header.getContext())}
+                                                </span>
+                                            </th>
+                                        ))}
+                                    </tr>
                                 ))}
-                            </tr>
-                        ))}
-                    </thead>
-                    <tbody>
-                        {table.getRowModel().rows.length === 0 ? (
-                            <tr>
-                                <td colSpan={columns.length} className="text-center py-6">
-                                    Nessun record.
-                                </td>
-                            </tr>
-                        ) : (
-                            table.getRowModel().rows.map((row) => (
-                                <tr
-                                    key={row.id}
-                                    onClick={() => onRowClick && onRowClick((row.original as any)[idKey], row.original)}
-                                    className={onRowClick ? "hover:bg-base-200 cursor-pointer" : undefined}
-                                >
-                                    {row.getVisibleCells().map((cell) => (
-                                        <td key={cell.id}>
-                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                            </thead>
+                            <tbody>
+                                {table.getRowModel().rows.length === 0 ? (
+                                    <tr>
+                                        <td colSpan={columns.length} className="text-center py-12">
+                                            <div className="flex flex-col items-center gap-3">
+                                                <span className="text-6xl text-amber-700/30">📜</span>
+                                                <p className="text-amber-700 font-serif text-lg">Nessun record trovato</p>
+                                                <p className="text-amber-600/50 text-sm italic">La pergamena è vuota...</p>
+                                            </div>
                                         </td>
-                                    ))}
-                                </tr>
-                            ))
-                        )}
-                    </tbody>
-                </table>
-            </div>
-            {pagination && (
-                <div className="flex flex-col items-center mt-6">
-                    <div className="flex gap-4 items-center justify-center">
-                        <button
-                            className="btn btn-sm"
-                            disabled={page === 1}
-                            onClick={() => setPage((p) => Math.max(1, p - 1))}
-                        >
-                            &lt; Prev
-                        </button>
-                        <span className="mx-2">
-                            Pagina {page} di {totalPages}
-                        </span>
-                        <button
-                            className="btn btn-sm"
-                            disabled={page === totalPages}
-                            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                        >
-                            Next &gt;
-                        </button>
+                                    </tr>
+                                ) : (
+                                    table.getRowModel().rows.map((row, index) => (
+                                        <tr
+                                            key={row.id}
+                                            onClick={() => onRowClick && onRowClick((row.original as any)[idKey], row.original)}
+                                            className={`
+                                                border-b border-amber-700/20 transition-all duration-200
+                                                ${index % 2 === 0 ? 'bg-amber-100/30' : 'bg-transparent'}
+                                                ${onRowClick ? 'cursor-pointer hover:bg-amber-200/50' : ''}
+                                                hover:shadow-inner
+                                            `}
+                                        >
+                                            {row.getVisibleCells().map((cell) => (
+                                                <td key={cell.id} className="px-4 py-3">
+                                                    <span className="font-serif text-amber-800">
+                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                    </span>
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
                     </div>
-                    <div className="flex gap-2 items-center mt-2">
-                        <label htmlFor="rowsPerPage" className="text-sm">Righe:</label>
-                        <select
-                            id="rowsPerPage"
-                            className="select select-sm"
-                            value={rowsPerPage}
-                            onChange={e => { setRowsPerPage(Number(e.target.value)); setPage(1); }}
-                        >
-                            {[5, 10, 20, 50].map(n => (
-                                <option key={n} value={n}>{n}</option>
-                            ))}
-                        </select>
-                    </div>
+
+                    {/* Paginazione in stile antico */}
+                    {pagination && (
+                        <div className="mt-8">
+                            {/* Linea decorativa */}
+                            <div className="relative mb-6">
+                                <div className="absolute inset-0 flex items-center">
+                                    <div className="w-full border-t-2 border-amber-700/30"></div>
+                                </div>
+                                <div className="relative flex justify-center">
+                                    <span className="bg-parchment-100 px-4 text-amber-700/50 text-xl">⚜️</span>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                                {/* Selettore righe per pagina */}
+                                <div className="flex items-center gap-3 bg-amber-200/30 p-2 rounded-lg border border-amber-700/30">
+                                    <span className="text-sm font-serif text-amber-800">📏 Righe:</span>
+                                    <select
+                                        className="px-3 py-1 bg-parchment-100 border-2 border-amber-700 rounded text-amber-900 font-serif text-sm focus:outline-none focus:border-amber-900"
+                                        value={rowsPerPage}
+                                        onChange={e => { setRowsPerPage(Number(e.target.value)); setPage(1); }}
+                                    >
+                                        {[5, 10, 20, 50].map(n => (
+                                            <option key={n} value={n}>{n}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                {/* Controlli pagina */}
+                                <div className="flex items-center gap-4 bg-amber-200/30 p-2 rounded-lg border border-amber-700/30">
+                                    <button
+                                        className="px-4 py-1 bg-amber-700 text-amber-100 font-serif rounded border border-amber-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-800 transition-colors flex items-center gap-2"
+                                        disabled={page === 1}
+                                        onClick={() => setPage((p) => Math.max(1, p - 1))}
+                                    >
+                                        <span>←</span> Prev
+                                    </button>
+                                    
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-sm font-serif text-amber-800">Pag.</span>
+                                        <span className="px-3 py-1 bg-parchment-100 border-2 border-amber-700 rounded text-amber-900 font-bold">
+                                            {page}
+                                        </span>
+                                        <span className="text-sm font-serif text-amber-800">di {totalPages}</span>
+                                    </div>
+                                    
+                                    <button
+                                        className="px-4 py-1 bg-amber-700 text-amber-100 font-serif rounded border border-amber-600 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-800 transition-colors flex items-center gap-2"
+                                        disabled={page === totalPages}
+                                        onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                                    >
+                                        Next <span>→</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Info pagina */}
+                            <div className="mt-4 text-center text-xs text-amber-600/50 font-serif">
+                                Mostrati {((page-1)*rowsPerPage)+1} - {Math.min(page*rowsPerPage, totalRows)} di {totalRows} elementi
+                            </div>
+                        </div>
+                    )}
                 </div>
-            )}
+            </AncientCardContainer>
         </div>
     );
 }
-

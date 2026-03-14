@@ -17,7 +17,7 @@ export function CombatStat({
     className = '' 
 }: CombatStatProps) {
     
-    const isLong = label.length > 8;
+    //const isLong = label.length > 8;
     
     // Dimensioni basate sulla variante
     const sizes = {

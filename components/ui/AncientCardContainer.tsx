@@ -7,7 +7,7 @@ interface AncientCardContainerProps {
   className?: string;
   isDashed?: boolean;
   haveMargin?: boolean;
-  variant?: 'default' | 'add' | 'flipped';
+  variant?: 'default' | 'add' | 'flipped' | 'transparent';
 }
 
 const AncientCardContainer: React.FC<AncientCardContainerProps> = ({
@@ -17,28 +17,29 @@ const AncientCardContainer: React.FC<AncientCardContainerProps> = ({
   isDashed = false,
   haveMargin = false,
   variant = 'default',
+
 }) => {
   const variantStyles = {
     default: { bg: 'bg-amber-50', border: 'border-amber-800' },
     add:     { bg: 'bg-amber-50/90', border: 'border-amber-800 border-dashed' },
     flipped: { bg: 'bg-amber-800', border: 'border-amber-900' },
+    transparent: { bg: '', border: 'border-amber-800' },
   };
 
   const { bg, border } = variantStyles[variant];
 
   return (
     <div className={className} onClick={onClick}>
-      <div className={`relative w-full h-full ${bg} rounded-xl overflow-hidden border-8 shadow-2xl ${border}`}>
-
-        {/* Texture pergamena */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100/50 to-amber-300/30 pointer-events-none" />
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat',
-          }}
-        />
+      <div className={`relative w-full h-full ${bg} rounded-xl overflow-hidden border-8 shadow-2xl ${border}`}>     
+            <div className={`absolute inset-0 ${variant !== 'transparent' ? 'bg-gradient-to-br from-amber-100/50 to-amber-300/30' : ''} pointer-events-none`} />
+            <div
+              className="absolute inset-0 opacity-20 pointer-events-none"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E")`,
+                backgroundRepeat: 'repeat',
+              }}
+            />
+       
 
         {/* Bordo decorativo interno */}
         <div className={`absolute inset-2 border-2 rounded-lg ${

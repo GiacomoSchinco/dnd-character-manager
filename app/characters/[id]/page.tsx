@@ -7,7 +7,6 @@ import HpBar from "@/components/ui/HpBar";
 import { party } from "@/lib/party";
 import { SavingThrow, DataTable } from "@/components/ui";
 import { CombatStat } from "@/components/ui";
-import { IconShield } from "@/components/ui";
 import { notFound } from "next/navigation";
 import { currencyLabels, currencyOrder } from "@/lib/dictionaries/currency";
 import AncientCardContainer from "@/components/ui/AncientCardContainer";
